@@ -106,7 +106,7 @@ export const projects = [
   {
     name: "WildMind AI",
     role: "UI/UX Designer & Frontend Developer",
-    timeline: "2025 — Present",
+    timeline: "2025 — 2026",
     category: "AI Product",
     tech: ["Figma", "React.js", "Next.js", "Design Systems"],
     description:
@@ -129,7 +129,7 @@ export const experience = [
   {
     company: "WildMind AI",
     role: "UI/UX Designer & Frontend Developer",
-    period: "Aug 2025 — Present",
+    period: "Aug 2025 — July 2026",
     responsibilities: [
       "Design and develop intuitive, scalable user experiences for a generative AI platform",
       "Work across the full UI/UX process — research, wireframing, high-fidelity prototyping, and responsive, performance-optimized frontend builds",
