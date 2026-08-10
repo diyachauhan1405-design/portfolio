@@ -19,7 +19,7 @@ export default function Projects() {
           description="A mix of product design, design systems, and frontend builds — from research to production."
         />
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2">
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
             <motion.article
               key={project.name}
