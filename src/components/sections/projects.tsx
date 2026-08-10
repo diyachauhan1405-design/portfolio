@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Code2, ExternalLink } from "lucide-react";
 import SectionHeading from "@/components/ui/section-heading";
@@ -30,15 +31,28 @@ export default function Projects() {
               className="gradient-border group relative overflow-hidden rounded-3xl"
             >
               <div className="glass relative flex h-full flex-col overflow-hidden rounded-3xl transition-transform duration-500 group-hover:-translate-y-2">
-                <div
-                  className={`relative flex h-52 items-end overflow-hidden bg-gradient-to-br ${project.gradient} p-6`}
+                {/* Clickable image header */}
+                <a
+                  href={project.liveUrl || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${project.name}`}
+                  className={`relative flex h-52 items-end overflow-hidden bg-gradient-to-br ${project.gradient} p-6 cursor-pointer`}
                 >
-                  <div className="grid-glow absolute inset-0 opacity-20" />
-                  <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/10 blur-3xl transition-transform duration-700 group-hover:scale-125" />
-                  <span className="relative rounded-full bg-black/25 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
+                  {project.image && (
+                    <Image
+                      src={project.image}
+                      alt={project.name}
+                      fill
+                      className="object-cover object-center opacity-90 transition-transform duration-700 group-hover:scale-105"
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  <span className="relative z-10 rounded-full bg-black/30 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
                     {project.category}
                   </span>
-                </div>
+                  <ExternalLink className="absolute right-4 top-4 z-10 h-4 w-4 text-white/50 transition-colors group-hover:text-white/90" />
+                </a>
 
                 <div className="flex flex-1 flex-col gap-4 p-7">
                   <div className="flex items-start justify-between gap-4">
@@ -48,7 +62,7 @@ export default function Projects() {
                         {project.role} · {project.timeline}
                       </p>
                     </div>
-                    <ArrowUpRight className="h-5 w-5 shrink-0 text-text-secondary transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-accent-secondary" />
+                    <ArrowUpRight className="h-5 w-5 shrink-0 text-text-secondary/40" />
                   </div>
 
                   <p className="text-sm leading-relaxed text-text-secondary">{project.description}</p>
@@ -65,26 +79,27 @@ export default function Projects() {
                   </div>
 
                   <div className="mt-auto flex items-center gap-4 pt-4 text-sm">
-                    <a
-                      href="#"
-                      className="font-medium text-accent-secondary transition-colors hover:text-accent-primary"
-                    >
-                      View Case Study
-                    </a>
-                    <a
-                      href="#"
-                      aria-label="Live website"
-                      className="flex items-center gap-1 text-text-secondary transition-colors hover:text-text-primary"
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
-                    <a
-                      href="#"
-                      aria-label="GitHub repository"
-                      className="flex items-center gap-1 text-text-secondary transition-colors hover:text-text-primary"
-                    >
-                      <Code2 className="h-4 w-4" />
-                    </a>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-accent-secondary transition-colors hover:text-accent-primary"
+                      >
+                        Visit Site
+                      </a>
+                    )}
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub repository"
+                        className="flex items-center gap-1 text-text-secondary transition-colors hover:text-text-primary"
+                      >
+                        <Code2 className="h-4 w-4" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
