@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#021a12"/>
+      <stop offset="100%" stop-color="#011520"/>
+    </linearGradient>
+    <linearGradient id="energyLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00E5FF" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#00E5FF" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#22C55E" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#22C55E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+    <linearGradient id="barGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#00E5FF"/>
+    </linearGradient>
+    <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22C55E" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#22C55E" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur-sm">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+    <filter id="blur-md">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="blur-lg">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="300" fill="url(#bg)"/>
+
+  <!-- Circuit board grid lines -->
+  <g opacity="0.07" stroke="#00E5FF" stroke-width="0.5">
+    <line x1="0" y1="50" x2="800" y2="50"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="80" y1="0" x2="80" y2="300"/>
+    <line x1="160" y1="0" x2="160" y2="300"/>
+    <line x1="240" y1="0" x2="240" y2="300"/>
+    <line x1="320" y1="0" x2="320" y2="300"/>
+    <line x1="400" y1="0" x2="400" y2="300"/>
+    <line x1="480" y1="0" x2="480" y2="300"/>
+    <line x1="560" y1="0" x2="560" y2="300"/>
+    <line x1="640" y1="0" x2="640" y2="300"/>
+    <line x1="720" y1="0" x2="720" y2="300"/>
+  </g>
+
+  <!-- Circuit traces (horizontal + vertical right-angle paths) -->
+  <g opacity="0.3" stroke="#00E5FF" stroke-width="1" fill="none">
+    <polyline points="0,75 60,75 60,125 120,125"/>
+    <polyline points="0,175 40,175 40,225 100,225"/>
+    <polyline points="800,75 740,75 740,125 680,125"/>
+    <polyline points="800,225 760,225 760,175 700,175"/>
+    <polyline points="200,0 200,40 250,40 250,75"/>
+    <polyline points="600,0 600,40 550,40 550,75"/>
+    <polyline points="200,300 200,260 150,260 150,225"/>
+    <polyline points="600,300 600,260 650,260 650,225"/>
+  </g>
+  <g opacity="0.2" stroke="#22C55E" stroke-width="1" fill="none">
+    <polyline points="0,125 50,125 50,175 120,175"/>
+    <polyline points="800,125 750,125 750,175 680,175"/>
+    <polyline points="300,0 300,50 350,50"/>
+    <polyline points="500,0 500,50 450,50"/>
+  </g>
+
+  <!-- Circuit junction dots -->
+  <g fill="#00E5FF" opacity="0.4">
+    <circle cx="60" cy="75" r="2.5"/>
+    <circle cx="60" cy="125" r="2.5"/>
+    <circle cx="40" cy="175" r="2.5"/>
+    <circle cx="40" cy="225" r="2.5"/>
+    <circle cx="740" cy="75" r="2.5"/>
+    <circle cx="740" cy="125" r="2.5"/>
+    <circle cx="760" cy="225" r="2.5"/>
+    <circle cx="200" cy="40" r="2.5"/>
+    <circle cx="600" cy="40" r="2.5"/>
+  </g>
+
+  <!-- Energy waveform / graph line in center -->
+  <g>
+    <!-- Glow layer -->
+    <polyline
+      points="60,150 100,140 130,165 160,120 195,145 230,130 265,155 300,110 335,150 365,135 400,150 435,125 470,155 505,105 535,150 565,130 600,155 635,140 670,150 700,160 740,145"
+      fill="none" stroke="#00E5FF" stroke-width="6" filter="url(#blur-md)" opacity="0.4"/>
+    <!-- Sharp line -->
+    <polyline
+      points="60,150 100,140 130,165 160,120 195,145 230,130 265,155 300,110 335,150 365,135 400,150 435,125 470,155 505,105 535,150 565,130 600,155 635,140 670,150 700,160 740,145"
+      fill="none" stroke="url(#energyLine)" stroke-width="1.5" stroke-linejoin="round"/>
+    <!-- Fill area under wave -->
+    <polygon
+      points="60,150 100,140 130,165 160,120 195,145 230,130 265,155 300,110 335,150 365,135 400,150 435,125 470,155 505,105 535,150 565,130 600,155 635,140 670,150 700,160 740,145 740,210 60,210"
+      fill="url(#energyLine)" opacity="0.06"/>
+  </g>
+
+  <!-- IoT Device icons (stylized) -->
+  <!-- Central IoT Gateway -->
+  <g transform="translate(370, 110)">
+    <circle cx="30" cy="30" r="28" fill="url(#hubGlow)" filter="url(#blur-lg)"/>
+    <rect x="14" y="14" width="32" height="32" rx="6" fill="#00111a" stroke="#00E5FF" stroke-width="1.5" opacity="0.9"/>
+    <rect x="19" y="19" width="22" height="22" rx="3" fill="#001820" stroke="#00E5FF" stroke-width="0.8" opacity="0.7"/>
+    <!-- WiFi signal arcs -->
+    <path d="M23,28 Q30,20 37,28" stroke="#00E5FF" stroke-width="1.2" fill="none" opacity="0.9"/>
+    <path d="M19,24 Q30,13 41,24" stroke="#00E5FF" stroke-width="1" fill="none" opacity="0.6"/>
+    <circle cx="30" cy="32" r="2" fill="#00E5FF"/>
+    <!-- Connection dots -->
+    <circle cx="30" cy="0" r="2" fill="#00E5FF" opacity="0.7"/>
+    <circle cx="30" cy="60" r="2" fill="#00E5FF" opacity="0.7"/>
+    <circle cx="0" cy="30" r="2" fill="#00E5FF" opacity="0.7"/>
+    <circle cx="60" cy="30" r="2" fill="#00E5FF" opacity="0.7"/>
+  </g>
+
+  <!-- Smart Energy Meter - left -->
+  <g transform="translate(130, 105)">
+    <circle cx="30" cy="30" r="22" fill="url(#greenGlow)" filter="url(#blur-lg)" opacity="0.7"/>
+    <rect x="10" y="10" width="40" height="50" rx="5" fill="#001a08" stroke="#22C55E" stroke-width="1.5" opacity="0.9"/>
+    <rect x="15" y="18" width="30" height="18" rx="2" fill="#002010" stroke="#22C55E" stroke-width="0.7" opacity="0.8"/>
+    <!-- Display bars -->
+    <rect x="17" y="20" width="4" height="14" rx="1" fill="#22C55E" opacity="0.9"/>
+    <rect x="23" y="23" width="4" height="11" rx="1" fill="#22C55E" opacity="0.7"/>
+    <rect x="29" y="21" width="4" height="13" rx="1" fill="#22C55E" opacity="0.9"/>
+    <rect x="35" y="24" width="4" height="10" rx="1" fill="#22C55E" opacity="0.6"/>
+    <!-- LED dots -->
+    <circle cx="20" cy="44" r="2" fill="#22C55E"/>
+    <circle cx="30" cy="44" r="2" fill="#00E5FF" opacity="0.7"/>
+    <circle cx="40" cy="44" r="2" fill="#22C55E" opacity="0.5"/>
+    <line x1="30" y1="0" x2="30" y2="10" stroke="#22C55E" stroke-width="1" opacity="0.6"/>
+  </g>
+
+  <!-- IoT Sensor - right -->
+  <g transform="translate(600, 90)">
+    <circle cx="30" cy="35" r="24" fill="url(#greenGlow)" filter="url(#blur-lg)" opacity="0.6"/>
+    <ellipse cx="30" cy="35" rx="22" ry="28" fill="#001408" stroke="#22C55E" stroke-width="1.5" opacity="0.9"/>
+    <!-- Sensor rings -->
+    <ellipse cx="30" cy="35" rx="14" ry="18" fill="none" stroke="#22C55E" stroke-width="0.8" opacity="0.6"/>
+    <ellipse cx="30" cy="35" rx="7" ry="9" fill="none" stroke="#00E5FF" stroke-width="0.8" opacity="0.7"/>
+    <circle cx="30" cy="35" r="3" fill="#22C55E"/>
+    <circle cx="30" cy="35" r="1.2" fill="white"/>
+    <!-- Signal lines -->
+    <line x1="30" y1="0" x2="30" y2="7" stroke="#22C55E" stroke-width="1" opacity="0.6"/>
+    <line x1="30" y1="63" x2="30" y2="70" stroke="#22C55E" stroke-width="1" opacity="0.6"/>
+  </g>
+
+  <!-- Connection lines from gateway to devices -->
+  <g filter="url(#blur-sm)" opacity="0.5">
+    <line x1="370" y1="140" x2="200" y2="140" stroke="#00E5FF" stroke-width="1.5"/>
+    <line x1="430" y1="140" x2="600" y2="140" stroke="#22C55E" stroke-width="1.5"/>
+  </g>
+  <g opacity="0.7">
+    <line x1="370" y1="140" x2="200" y2="140" stroke="#00E5FF" stroke-width="0.8" stroke-dasharray="4,3"/>
+    <line x1="430" y1="140" x2="600" y2="140" stroke="#22C55E" stroke-width="0.8" stroke-dasharray="4,3"/>
+  </g>
+
+  <!-- Data packets moving along connection lines -->
+  <g opacity="0.9">
+    <circle cx="285" cy="140" r="2.5" fill="#00E5FF"/>
+    <circle cx="510" cy="140" r="2.5" fill="#22C55E"/>
+  </g>
+
+  <!-- Vertical bar chart - bottom right corner -->
+  <g transform="translate(695, 195)" opacity="0.7">
+    <rect x="0" y="30" width="8" height="40" rx="2" fill="url(#barGrad)" opacity="0.8"/>
+    <rect x="12" y="15" width="8" height="55" rx="2" fill="url(#barGrad2)" opacity="0.9"/>
+    <rect x="24" y="22" width="8" height="48" rx="2" fill="url(#barGrad)" opacity="0.8"/>
+    <rect x="36" y="8" width="8" height="62" rx="2" fill="url(#barGrad2)"/>
+    <rect x="48" y="18" width="8" height="52" rx="2" fill="url(#barGrad)" opacity="0.9"/>
+  </g>
+
+  <!-- Label -->
+  <text x="50" y="278" font-family="system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="0.2em" fill="white" opacity="0.3">IOT ENERGY MANAGEMENT</text>
+</svg>

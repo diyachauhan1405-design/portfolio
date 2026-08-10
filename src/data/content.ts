@@ -102,6 +102,9 @@ export const projects = [
     description:
       "Designed and built the official website for an Ahmedabad-based drone light show company — owning UI/UX and frontend end-to-end, from Figma through production code. Includes service pages, city-specific landing pages, and a blog/portfolio section built for a conversion-focused, brand-forward client inquiry funnel.",
     gradient: "from-[#6C63FF] to-[#00E5FF]",
+    image: "/projects/flybit.svg",
+    github: "#",
+    liveUrl: "#",
   },
   {
     name: "WildMind AI",
@@ -112,6 +115,9 @@ export const projects = [
     description:
       "Design and develop intuitive, scalable experiences for a generative AI platform — translating complex AI workflows into seamless, user-centric products. Built reusable, accessible React/Next.js components that improved delivery speed across the team.",
     gradient: "from-[#7C3AED] to-[#6C63FF]",
+    image: "/projects/wildmind.svg",
+    github: "#",
+    liveUrl: "#",
   },
   {
     name: "IncSmart Technologies",
@@ -122,6 +128,9 @@ export const projects = [
     description:
       "Designed and developed a corporate website for an IoT and energy management solutions company, showcasing their product portfolio — IoT gateways, smart energy meters — and communicating brand and services to clients across warehousing, railways, and hospitality.",
     gradient: "from-[#00E5FF] to-[#22C55E]",
+    image: "/projects/incsmart.svg",
+    github: "#",
+    liveUrl: "#",
   },
 ];
 
@@ -202,12 +211,12 @@ export const funFacts = [
 ];
 
 export const achievementStats = [
-  { label: "Client Projects", value: 2, suffix: "" },
+  { label: "Years of Experience", value: 1.5, suffix: "+" },
   { label: "Companies", value: 2, suffix: "" },
+  { label: "Client Projects", value: 2, suffix: "" },
+  { label: "Internships", value: 2, suffix: "" },
   { label: "Certifications", value: 3, suffix: "" },
   { label: "Core Skills", value: 20, suffix: "+" },
-  { label: "Years Experience", value: 2, suffix: "+" },
-  { label: "Internships", value: 2, suffix: "" },
 ];
 
 export const certifications = [
