@@ -30,10 +30,18 @@ export default function Process() {
         />
 
         <div ref={ref} className="relative mt-24">
-          <div className="absolute left-5 top-5 h-[calc(100%-2.5rem)] w-px bg-border sm:left-1/2 sm:top-6 sm:h-px sm:w-[calc(100%-2.5rem)] sm:-translate-x-1/2" />
+          {/* Mobile connector line */}
+          <div className="absolute left-5 top-5 h-[calc(100%-2.5rem)] w-px bg-border sm:hidden" />
           <motion.div
-            style={{ scaleY: lineScale, scaleX: lineScale }}
-            className="absolute left-5 top-5 h-[calc(100%-2.5rem)] w-px origin-top bg-gradient-to-b from-accent-primary via-accent-secondary to-purple-glow sm:left-6 sm:top-6 sm:h-px sm:w-[calc(100%-3rem)] sm:origin-left sm:bg-gradient-to-r"
+            style={{ scaleY: lineScale }}
+            className="absolute left-5 top-5 h-[calc(100%-2.5rem)] w-px origin-top bg-gradient-to-b from-accent-primary via-accent-secondary to-purple-glow sm:hidden"
+          />
+
+          {/* Desktop connector line */}
+          <div className="absolute left-1/2 top-6 hidden h-px w-[calc(100%-2.5rem)] -translate-x-1/2 bg-border sm:block" />
+          <motion.div
+            style={{ scaleX: lineScale }}
+            className="absolute left-6 top-6 hidden h-px w-[calc(100%-3rem)] origin-left bg-gradient-to-r from-accent-primary via-accent-secondary to-purple-glow sm:block"
           />
 
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-5 sm:gap-4">

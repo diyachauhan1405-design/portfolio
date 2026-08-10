@@ -10,7 +10,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="relative py-28 sm:py-36">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
           eyebrow="Skills"
           title={
@@ -21,7 +21,7 @@ export default function Skills() {
           description="Hover any skill to see experience, project count, and how often I reach for it."
         />
 
-        <div className="mt-16 flex flex-col gap-12">
+        <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((group, gi) => (
             <motion.div
               key={group.category}

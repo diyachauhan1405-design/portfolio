@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { ArrowDown, Download, Mail, FolderOpen, Braces, Palette, PenTool } from "lucide-react";
+import { Download, Mail, FolderOpen, Braces, Palette, PenTool } from "lucide-react";
 import AuroraBackground from "@/components/ui/aurora-background";
 import Particles from "@/components/ui/particles";
 import TiltCard from "@/components/ui/tilt-card";
@@ -189,21 +189,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <motion.a
-        href="#about"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 3, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs text-text-secondary sm:flex"
-      >
-        Scroll
-        <motion.span
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ArrowDown className="h-4 w-4" />
-        </motion.span>
-      </motion.a>
     </section>
   );
 }
