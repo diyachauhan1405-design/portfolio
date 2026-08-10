@@ -104,7 +104,7 @@ export const projects = [
     gradient: "from-[#6C63FF] to-[#00E5FF]",
     image: "/projects/flybit.svg",
     github: "#",
-    liveUrl: "#",
+    liveUrl: "https://flybitdynamics.com/",
   },
   {
     name: "WildMind AI",
@@ -129,8 +129,8 @@ export const projects = [
       "Designed and developed a corporate website for an IoT and energy management solutions company, showcasing their product portfolio — IoT gateways, smart energy meters — and communicating brand and services to clients across warehousing, railways, and hospitality.",
     gradient: "from-[#00E5FF] to-[#22C55E]",
     image: "/projects/incsmart.svg",
-    github: "#",
-    liveUrl: "#",
+    github: "https://github.com/diyachauhan1405-design/incsmart-web",
+    liveUrl: "https://incsmart-web.vercel.app/",
   },
 ];
 
