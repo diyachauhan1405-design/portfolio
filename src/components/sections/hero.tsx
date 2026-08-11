@@ -163,10 +163,6 @@ export default function Hero() {
                   </p>
                   <p className="text-xs text-text-secondary">Years Experience</p>
                 </div>
-                <div>
-                  <p className="font-heading text-base font-semibold">{profile.company}</p>
-                  <p className="text-xs text-text-secondary">Current Company</p>
-                </div>
               </div>
 
               <div className="flex flex-wrap gap-2">
