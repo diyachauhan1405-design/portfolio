@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Code2, ExternalLink } from "lucide-react";
 import SectionHeading from "@/components/ui/section-heading";
@@ -40,11 +39,11 @@ export default function Projects() {
                   className={`relative flex h-52 items-end overflow-hidden bg-gradient-to-br ${project.gradient} p-6 cursor-pointer`}
                 >
                   {project.image && (
-                    <Image
-                      src={project.image}
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${project.image}`}
                       alt={project.name}
-                      fill
-                      className="object-cover object-center opacity-90 transition-transform duration-700 group-hover:scale-105"
+                      className="absolute inset-0 h-full w-full object-cover object-center opacity-90 transition-transform duration-700 group-hover:scale-105"
                     />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />

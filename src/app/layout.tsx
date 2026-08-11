@@ -28,6 +28,9 @@ export const metadata: Metadata = {
     "React Developer",
     "Portfolio",
   ],
+  icons: {
+    icon: "/icon.svg",
+  },
   openGraph: {
     title: "Diya Chauhan — UI/UX Designer & Frontend Developer",
     description:
