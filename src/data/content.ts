@@ -40,11 +40,29 @@ export const quickStats = [
   { label: "Core Skills", value: 20, suffix: "+" },
 ];
 
+export const education = [
+  {
+    institution: "IIT Kharagpur",
+    degree: "Post Graduate, AI Software Engineering",
+    location: "Kharagpur",
+    period: "Oct 2026 — Jul 2027",
+    status: "In progress",
+  },
+  {
+    institution: "U.V. Patel College of Engineering, Ganpat University",
+    degree: "Bachelor's, Computer Engineering",
+    location: "Kherva",
+    period: "Aug 2021 — May 2025",
+    status: "Completed",
+  },
+];
+
 export const careerTimeline = [
-  { label: "Education", detail: "B.E., Computer Engineering — U.V. Patel College of Engineering, Ganpat University (2021 – 2025)" },
+  { label: "Education", detail: "Bachelor's, Computer Engineering — U.V. Patel College of Engineering, Ganpat University (2021 – 2025)" },
   { label: "Python Development Intern", detail: "Vnnovate Solutions Pvt Ltd (Dec 2023 – Jan 2024)" },
   { label: "UI/UX Intern", detail: "Vnnovate Solutions Pvt Ltd (Jan 2025 – Jun 2025)" },
   { label: "UI/UX Designer & Frontend Developer", detail: "WildMind AI (Aug 2025 – July 2026)" },
+  { label: "Post Graduate Studies", detail: "AI Software Engineering — IIT Kharagpur (Oct 2026 – Jul 2027)" },
 ];
 
 export const skillCategories = [
