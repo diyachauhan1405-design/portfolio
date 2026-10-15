@@ -11,6 +11,7 @@ const links = [
   { label: "Skills", href: "#skills" },
   { label: "Process", href: "#process" },
   { label: "Work", href: "#work" },
+  { label: "Education", href: "#education" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];
@@ -102,7 +103,7 @@ export default function Nav() {
           <MagneticButton
             as="a"
             href="#contact"
-            className="glass hidden items-center rounded-full px-4 py-2 text-sm font-medium text-text-primary transition-colors hover:border-accent-secondary/50 sm:inline-flex"
+            className="glass hidden items-center whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium text-text-primary transition-colors hover:border-accent-secondary/50 sm:inline-flex md:hidden lg:inline-flex"
           >
             Let&apos;s Talk
           </MagneticButton>

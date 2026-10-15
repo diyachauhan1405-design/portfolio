@@ -7,6 +7,7 @@ import About from "@/components/sections/about";
 import Skills from "@/components/sections/skills";
 import Process from "@/components/sections/process";
 import Projects from "@/components/sections/projects";
+import Education from "@/components/sections/education";
 import Experience from "@/components/sections/experience";
 import Achievements from "@/components/sections/achievements";
 import Contact from "@/components/sections/contact";
@@ -22,6 +23,7 @@ export default function Home() {
         <Skills />
         <Process />
         <Projects />
+        <Education />
         <Experience />
         <Achievements />
         <Contact />
