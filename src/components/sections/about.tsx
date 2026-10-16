@@ -43,7 +43,7 @@ export default function About() {
         </div>
 
         {/* Stats */}
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        {/* <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {quickStats.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -61,7 +61,7 @@ export default function About() {
               <p className="mt-2 text-xs text-text-secondary">{stat.label}</p>
             </motion.div>
           ))}
-        </div>
+        </div> */}
 
         {/* Career timeline */}
         <div className="mt-28">
@@ -81,18 +81,16 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.6 }}
-                    className={`relative flex items-center gap-5 pl-12 lg:gap-0 lg:pl-0 ${
-                      isLeft ? "lg:justify-start" : "lg:flex-row-reverse lg:justify-start"
-                    } lg:py-6`}
+                    className={`relative flex items-center gap-5 pl-12 lg:gap-0 lg:pl-0 ${isLeft ? "lg:justify-start" : "lg:flex-row-reverse lg:justify-start"
+                      } lg:py-6`}
                   >
                     <div className="absolute left-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-br from-accent-primary to-purple-glow shadow-[0_0_20px_rgba(108,99,255,0.5)] lg:left-1/2 lg:-translate-x-1/2">
                       <Icon className="h-4 w-4 text-white" />
                     </div>
 
                     <div
-                      className={`glass w-full rounded-2xl px-5 py-4 lg:w-[calc(50%-3rem)] ${
-                        isLeft ? "lg:mr-auto lg:text-right" : "lg:ml-auto lg:text-left"
-                      }`}
+                      className={`glass w-full rounded-2xl px-5 py-4 lg:w-[calc(50%-3rem)] ${isLeft ? "lg:mr-auto lg:text-right" : "lg:ml-auto lg:text-left"
+                        }`}
                     >
                       <p className="font-heading text-base font-semibold">{item.label}</p>
                       <p className="mt-1 text-sm text-text-secondary">{item.detail}</p>
