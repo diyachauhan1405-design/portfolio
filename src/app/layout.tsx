@@ -1,19 +1,25 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/providers/smooth-scroll-provider";
 
-const fraunces = Fraunces({
+// Fonts are self-hosted (from Fontsource, SIL OFL — see ./fonts/*-OFL.txt) so the
+// build never has to download from Google Fonts. Fetching them at build time broke
+// the GitHub Actions deploy.
+const fraunces = localFont({
   variable: "--font-fraunces",
-  subsets: ["latin"],
-  axes: ["opsz", "SOFT"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "./fonts/fraunces-latin-full-normal.woff2", weight: "100 900", style: "normal" },
+    { path: "./fonts/fraunces-latin-full-italic.woff2", weight: "100 900", style: "italic" },
+  ],
+  display: "swap",
 });
 
-const inter = Inter({
+const inter = localFont({
   variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  src: "./fonts/inter-latin-wght-normal.woff2",
+  weight: "100 900",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
