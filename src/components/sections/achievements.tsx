@@ -9,7 +9,7 @@ const icons = [Layers, PenTool, BookOpen, Cpu, CalendarClock, Smile];
 
 export default function Achievements() {
   return (
-    <section className="relative py-24">
+    <section data-frame="Stats" className="relative py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="glass-strong grid grid-cols-2 gap-px overflow-hidden rounded-3xl sm:grid-cols-3 lg:grid-cols-6">
           {achievementStats.map((stat, i) => {

@@ -68,36 +68,39 @@ export const careerTimeline = [
 export const skillCategories = [
   {
     category: "UI/UX",
+    usedAt: "WildMind AI · Vnnovate · FLYBIT · IncsSmart",
     skills: [
-      { name: "User Research", experience: "1.5+ yrs", projects: "5+ projects", usage: "Weekly" },
-      { name: "Wireframing", experience: "2+ yrs", projects: "5+ projects", usage: "Daily" },
-      { name: "Prototyping", experience: "2+ yrs", projects: "5+ projects", usage: "Daily" },
-      { name: "User Flow", experience: "2+ yrs", projects: "5+ projects", usage: "Weekly" },
-      { name: "Information Architecture", experience: "2+ yrs", projects: "4+ projects", usage: "Weekly" },
-      { name: "Design Systems", experience: "1+ yr", projects: "3+ projects", usage: "Daily" },
-      { name: "Interaction Design", experience: "2+ yrs", projects: "5+ projects", usage: "Daily" },
-      { name: "Responsive Design", experience: "2+ yrs", projects: "6+ projects", usage: "Daily" },
+      "User Research",
+      "Wireframing",
+      "Prototyping",
+      "User Flows",
+      "Information Architecture",
+      "Design Systems",
+      "Interaction Design",
+      "Responsive Design",
     ],
   },
   {
     category: "Frontend",
+    usedAt: "WildMind AI · FLYBIT · IncsSmart · Vnnovate",
     skills: [
-      { name: "React.js", experience: "1.5+ yrs", projects: "6+ projects", usage: "Daily" },
-      { name: "Next.js", experience: "1+ yr", projects: "4+ projects", usage: "Daily" },
-      { name: "JavaScript", experience: "2+ yrs", projects: "6+ projects", usage: "Daily" },
-      { name: "HTML5", experience: "2+ yrs", projects: "6+ projects", usage: "Daily" },
-      { name: "CSS3", experience: "2+ yrs", projects: "6+ projects", usage: "Daily" },
-      { name: "Bootstrap", experience: "1+ yr", projects: "3+ projects", usage: "Occasional" },
-      { name: "Tailwind CSS", experience: "1+ yr", projects: "4+ projects", usage: "Daily" },
+      "React.js",
+      "Next.js",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Bootstrap",
+      "Tailwind CSS",
     ],
   },
   {
     category: "Tools & Collaboration",
+    usedAt: "All roles & projects",
     skills: [
-      { name: "Figma", experience: "2+ yrs", projects: "6+ projects", usage: "Daily" },
-      { name: "Git", experience: "2+ yrs", projects: "6+ projects", usage: "Daily" },
-      { name: "GitHub", experience: "2+ yrs", projects: "6+ projects", usage: "Daily" },
-      { name: "REST APIs", experience: "1+ yr", projects: "4+ projects", usage: "Weekly" },
+      "Figma",
+      "Git",
+      "GitHub",
+      "REST APIs",
     ],
   },
 ];
@@ -210,36 +213,6 @@ export const experience = [
   },
 ];
 
-export const testimonials = [
-  {
-    name: "Rohan Mehta",
-    role: "Product Manager, WildMind AI",
-    quote:
-      "Diya translates ambiguous requirements into clean, usable interfaces faster than anyone I've worked with — and she can build them herself.",
-  },
-  {
-    name: "Ananya Iyer",
-    role: "Engineering Lead",
-    quote:
-      "Her handoffs are the cleanest I've seen. Design tokens, states, and edge cases are all documented before a single ticket is opened.",
-  },
-  {
-    name: "Karan Shah",
-    role: "Founder, FLYBIT Dynamics",
-    quote:
-      "Diya designed our site and built the frontend herself. Rare to find someone who's excellent at both.",
-  },
-];
-
-export const funFacts = [
-  { label: "Favorite Design Tool", value: "Figma" },
-  { label: "Based In", value: "Ahmedabad, India" },
-  { label: "Theme Preference", value: "Dark mode, always" },
-  { label: "Currently Learning", value: "Advanced Next.js patterns" },
-  { label: "Started In", value: "Computer Vision & Python" },
-  { label: "Design Philosophy", value: "Clarity over decoration" },
-];
-
 export const achievementStats = [
   { label: "Years of Experience", value: 1.5, suffix: "+" },
   { label: "Companies", value: 2, suffix: "" },
@@ -254,3 +227,68 @@ export const certifications = [
   { name: "Circuit Assembly", issuer: "U.V. Patel College of Engineering", date: "Mar 2024" },
   { name: "PRINT FUSION 2K24", issuer: "U.V. Patel College of Engineering", date: "Mar 2024" },
 ];
+
+export const recruiterSummary = {
+  headline: "Designer who ships the code — focused on AI products.",
+  facts: [
+    { label: "Role", value: "UI/UX Designer & Frontend Developer" },
+    { label: "Experience", value: "1.5+ years · 1 full-time role, 2 internships" },
+    { label: "Core stack", value: "Figma · React.js · Next.js · Tailwind CSS" },
+    { label: "Domain", value: "Generative AI platform, marketing & corporate sites" },
+    { label: "Education", value: "B.E. Computer Engineering · PG in AI Software Engineering, IIT Kharagpur (from Oct 2026)" },
+    { label: "Availability", value: "Immediate joiner · Ahmedabad, India" },
+  ],
+  highlights: [
+    { value: "~30%", label: "UX improvement on a generative AI platform" },
+    { value: "~40%", label: "more component reuse across projects" },
+    { value: "~25%", label: "fewer design-to-dev iterations" },
+  ],
+};
+
+// Case study — built from the WildMind AI resume entry.
+// TODO(Diya): replace the drafted "decisions", "tradeOff" and "reflection" text with
+// the real specifics from your work before publishing.
+export const caseStudy = {
+  company: "WildMind AI",
+  title: "Making a generative AI platform feel simple",
+  period: "Aug 2025 — Jul 2026",
+  role: "UI/UX Designer & Frontend Developer — owned research, design and frontend build",
+  tags: ["Generative AI", "Product Design", "Design System", "React.js", "Next.js"],
+  context:
+    "WildMind AI is a generative AI platform. Its power was hidden behind complex, multi-step AI workflows that new users found hard to follow.",
+  problem:
+    "Users had to understand how the AI worked before they could get value from it. Each new screen was also designed and built from scratch, so design and development drifted apart and every feature took several hand-off rounds.",
+  constraints: [
+    "AI generation is slow and its output is unpredictable, so the UI has to handle waiting, partial results and failures gracefully.",
+    "A small team: the same person (me) designing in Figma and shipping the frontend.",
+    "The product was evolving fast, so designs had to be reusable rather than one-off.",
+  ],
+  decisions: [
+    {
+      title: "Turn complex AI workflows into guided steps",
+      detail:
+        "Mapped each workflow through user research and user flows, then broke it into clear steps with progressive disclosure — advanced options stay out of the way until needed.",
+      tradeOff: "Fewer controls on screen at first, in exchange for a much faster first success for new users.",
+    },
+    {
+      title: "Design every state, not just the happy path",
+      detail:
+        "Prototyped loading, generating, partial, empty and error states in Figma before building, so slow or failed generations never left users guessing.",
+      tradeOff: "More design time up front, but far fewer surprises and rework during development.",
+    },
+    {
+      title: "One reusable component library across design and code",
+      detail:
+        "Built generic, reusable React.js and Next.js components that mirror the Figma components, so a design change maps directly to one component in code.",
+      tradeOff: "Slower to build the first screens, much faster for every screen after that.",
+    },
+  ],
+  outcomes: [
+    { value: "~30%", label: "Improvement in overall user experience" },
+    { value: "~25%", label: "Fewer design-to-development iterations" },
+    { value: "~40%", label: "Increase in component reusability" },
+    { value: "~30%", label: "Less frontend development time" },
+  ],
+  reflection:
+    "If I did it again, I would set up usability metrics from day one, so improvements could be measured continuously instead of estimated at milestones.",
+};

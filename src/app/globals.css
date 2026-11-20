@@ -184,3 +184,109 @@ body {
     cursor: auto !important;
   }
 }
+
+/* ───────── Studio: Design ⇄ Build mode ───────── */
+.studio-panel {
+  background: rgba(11, 18, 32, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.studio-range {
+  accent-color: var(--accent-primary);
+  width: 100%;
+}
+
+html[data-motion="off"] *,
+html[data-motion="off"] *::before,
+html[data-motion="off"] *::after {
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Canvas grid behind everything, like a Figma file */
+html[data-mode="design"] body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Every section becomes a named frame */
+html[data-mode="design"] [data-frame] {
+  position: relative;
+  outline: 1px dashed color-mix(in srgb, var(--accent-primary) 70%, transparent);
+  outline-offset: -10px;
+}
+html[data-mode="design"] [data-frame]::before {
+  content: "▢ " attr(data-frame);
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 56;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--accent-primary);
+  color: #fff;
+  font: 600 11px/1.6 var(--font-inter), system-ui, sans-serif;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+/* Keep the hero's frame label clear of the fixed nav */
+html[data-mode="design"] #top[data-frame]::before {
+  top: 96px;
+}
+
+/* Components show their bounding boxes */
+html[data-mode="design"] .glass,
+html[data-mode="design"] .glass-strong {
+  outline: 1px dashed rgba(255, 255, 255, 0.28);
+  outline-offset: 3px;
+}
+
+/* Annotated elements: hover to read the spec */
+html[data-mode="design"] [data-spec] {
+  position: relative;
+  outline: 1px solid color-mix(in srgb, var(--accent-secondary) 55%, transparent);
+  outline-offset: 4px;
+  cursor: help;
+}
+html[data-mode="design"] [data-spec]::after {
+  content: attr(data-spec);
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 10px);
+  z-index: 57;
+  width: max-content;
+  max-width: min(320px, 80vw);
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--accent-secondary);
+  color: #050816;
+  font: 600 11px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0;
+  text-align: left;
+  -webkit-text-fill-color: #050816;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.15s, transform 0.15s;
+  pointer-events: none;
+}
+html[data-mode="design"] [data-spec]:hover::after,
+html[data-mode="design"] [data-spec]:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -17,7 +17,7 @@ export default function Process() {
   const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <section id="process" className="relative py-28 sm:py-36">
+    <section id="process" data-frame="Process" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
           eyebrow="Design Process"

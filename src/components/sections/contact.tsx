@@ -35,7 +35,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="relative overflow-hidden py-28 sm:py-36">
+    <section id="contact" data-frame="Contact" className="relative overflow-hidden py-28 sm:py-36">
       <AuroraBackground />
       <Particles count={16} />
 

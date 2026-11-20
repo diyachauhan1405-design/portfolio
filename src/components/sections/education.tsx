@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 export default function Education() {
   return (
-    <section id="education" className="relative py-28 sm:py-36">
+    <section id="education" data-frame="Education" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-4xl px-6">
         <SectionHeading
           eyebrow="Education"

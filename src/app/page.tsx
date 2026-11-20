@@ -1,8 +1,10 @@
-import LoadingScreen from "@/components/loading-screen";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
 import ScrollToTop from "@/components/scroll-to-top";
+import Studio from "@/components/studio/studio";
 import Hero from "@/components/sections/hero";
+import RecruiterSummary from "@/components/sections/recruiter-summary";
+import CaseStudy from "@/components/sections/case-study";
 import About from "@/components/sections/about";
 import Skills from "@/components/sections/skills";
 import Process from "@/components/sections/process";
@@ -15,14 +17,15 @@ import Contact from "@/components/sections/contact";
 export default function Home() {
   return (
     <>
-      <LoadingScreen />
       <Nav />
       <main className="relative">
         <Hero />
+        <RecruiterSummary />
         <About />
         <Skills />
         <Process />
         <Projects />
+        <CaseStudy />
         <Education />
         <Experience />
         <Achievements />
@@ -30,6 +33,7 @@ export default function Home() {
       </main>
       <Footer />
       <ScrollToTop />
+      <Studio />
     </>
   );
 }

@@ -13,13 +13,13 @@ const fadeUp: Variants = {
   show: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay: 2.3 + i * 0.12, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { duration: 0.7, delay: 0.1 + i * 0.1, ease: [0.22, 1, 0.36, 1] as const },
   }),
 };
 
 export default function Hero() {
   return (
-    <section id="top" className="relative flex min-h-screen items-center overflow-hidden pt-32 pb-20">
+    <section id="top" data-frame="Hero" className="relative flex min-h-screen items-center overflow-hidden pt-32 pb-20">
       <AuroraBackground />
       <Particles count={18} />
 
@@ -42,15 +42,17 @@ export default function Hero() {
             initial="hidden"
             animate="show"
             variants={fadeUp}
+            data-spec="H1 · Space Grotesk Bold · 60/65 · tracking −2% · gradient fill"
             className="font-heading text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl"
           >
             Hi, I&apos;m Diya <span className="inline-block animate-[wave_2s_ease-in-out_infinite]">👋</span>
             <br />
-            <span className="text-gradient">I Design Experiences</span>
+            I <span className="text-gradient">design</span> &amp;{" "}
+            <span className="text-gradient">build</span>
             <br />
-            That Users Love
+            interfaces for
             <br />
-            <span className="text-gradient-accent">And Developers Enjoy Building.</span>
+            <span className="text-gradient-accent">AI products.</span>
           </motion.h1>
 
           <motion.p
@@ -60,8 +62,9 @@ export default function Hero() {
             variants={fadeUp}
             className="max-w-xl text-balance text-base text-text-secondary sm:text-lg"
           >
-            UI/UX Designer & Frontend Developer turning research and Figma prototypes into
-            pixel-perfect, accessible React & Next.js interfaces — from first sketch to production.
+            UI/UX Designer &amp; Frontend Developer who owns features end-to-end — from user research
+            and Figma prototypes to production React &amp; Next.js code. Most recently, I shipped a
+            generative AI platform at WildMind AI.
           </motion.p>
 
           <motion.div
@@ -105,7 +108,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 2.5, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="relative mx-auto w-full max-w-sm"
         >
           {/* floating tokens */}
@@ -115,7 +118,7 @@ export default function Hero() {
           >
             <div className="glass flex items-center gap-2 rounded-2xl px-3 py-2 text-xs text-text-secondary shadow-lg">
               <Palette className="h-3.5 w-3.5 text-accent-secondary" />
-              #6C63FF
+              <span data-token="accent-hex">#6C63FF</span>
             </div>
           </motion.div>
 

@@ -7,7 +7,7 @@ import { projects } from "@/data/content";
 
 export default function Projects() {
   return (
-    <section id="work" className="relative py-28 sm:py-36">
+    <section id="work" data-frame="Featured Work" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
           eyebrow="Featured Work"
@@ -27,6 +27,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
+              data-spec="Project card · radius 3xl · hover lift −8px · image 208px"
               className="gradient-border group relative overflow-hidden rounded-3xl"
             >
               <div className="glass relative flex h-full flex-col overflow-hidden rounded-3xl transition-transform duration-500 group-hover:-translate-y-2">
