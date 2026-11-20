@@ -360,7 +360,7 @@ export default function DesignEditor() {
               <Row label="Client" value={file.project} />
               <Row label="Type" value={file.type} />
               <Row label="Role" value={file.role} />
-              <Row label="Year" value={file.year} />
+              {file.year && <Row label="Year" value={file.year} />}
             </Section>
             <Section title="Fill">
               <div className="flex items-center gap-2 rounded-md bg-[#f5f5f5] px-2 py-1.5">

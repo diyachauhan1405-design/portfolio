@@ -269,7 +269,7 @@ export type DesignFile = {
   page: string;
   project: string;
   role: string;
-  year: string;
+  year?: string;
   type: string;
   tools: string[];
   summary: string;
@@ -280,67 +280,76 @@ export type DesignFile = {
   swatch: string;
 };
 
+// TODO(Diya): give each file its real project name, year and a line about your role.
 export const designFiles: DesignFile[] = [
   {
-    id: "wildmind",
-    name: "WildMind AI — Product UI",
-    page: "Product design",
-    project: "WildMind AI",
-    role: "UI/UX Designer & Frontend Developer",
-    year: "2025 — 2026",
-    type: "Generative AI platform",
-    tools: ["Figma", "Design system", "Prototyping"],
+    id: "dashboard",
+    name: "Admin dashboard",
+    page: "Web & dashboards",
+    project: "Admin dashboard",
+    role: "UI/UX Designer",
+    type: "Web app · Dashboard",
+    tools: ["Figma", "Data tables", "Charts"],
     summary:
-      "Flows and screens for a generative AI platform — turning complex AI workflows into guided, user-centric steps.",
-    highlights: ["~30% better overall UX", "~25% fewer design-to-dev iterations", "Figma components mirrored in React"],
-    figmaUrl: "",
-    swatch: "#ff9ec7",
+      "A desktop admin dashboard with a dark sidebar navigation, data-dense tables, filters and analytics cards.",
+    highlights: ["Multiple dashboard screens", "Table, filter and chart patterns", "Consistent navigation shell"],
+    figmaUrl: "https://www.figma.com/design/Ij9uE4nCNtqgALvSQfRMrP/Untitled?node-id=17-3",
+    swatch: "#bba6ff",
   },
   {
-    id: "flybit",
-    name: "FLYBIT Dynamics — Website",
-    page: "Web design",
-    project: "FLYBIT Dynamics",
-    role: "UI/UX Designer & Frontend Developer",
-    year: "2025",
-    type: "Marketing website",
-    tools: ["Figma", "Responsive design", "Design system"],
+    id: "mobile-orange",
+    name: "Mobile app — full flow",
+    page: "Mobile apps",
+    project: "Mobile app (orange)",
+    role: "UI/UX Designer",
+    type: "Mobile app",
+    tools: ["Figma", "User flows", "Mobile UI"],
     summary:
-      "Service, city-specific, blog and portfolio pages for a drone light show company, designed for a conversion-focused enquiry flow.",
-    highlights: ["Consistent design system across page types", "Designed mobile-first", "Shipped from Figma to production"],
-    figmaUrl: "",
-    liveUrl: "https://flybitdynamics.com/",
-    swatch: "#8fd3ff",
+      "An end-to-end mobile app: a large set of screens laid out flow by flow, with an orange accent system across light and dark screens.",
+    highlights: ["Complete multi-screen flows", "Light and dark screens", "Reusable mobile components"],
+    figmaUrl: "https://www.figma.com/design/kRLjs4MHwXXicePTAiUiui/Untitled?node-id=0-1",
+    swatch: "#ffae5c",
   },
   {
-    id: "incsmart",
-    name: "IncsSmart — Corporate site",
-    page: "Web design",
-    project: "IncsSmart",
-    role: "UI/UX Designer & Frontend Developer",
-    year: "2025",
-    type: "Corporate website",
-    tools: ["Figma", "Information architecture"],
+    id: "mobile-green",
+    name: "Mobile app — green UI",
+    page: "Mobile apps",
+    project: "Mobile app (green)",
+    role: "UI/UX Designer",
+    type: "Mobile app",
+    tools: ["Figma", "Mobile UI"],
     summary:
-      "Product, service and industry use-case pages for an IoT and energy management company, translating business requirements into clean UI.",
-    highlights: ["Clear IA for products & industries", "Responsive page templates"],
-    figmaUrl: "",
-    liveUrl: "https://incsmart-web.vercel.app/",
+      "A green-themed mobile app, with screens grouped on separate boards for different parts of the journey.",
+    highlights: ["Screens grouped by journey", "Consistent green action system"],
+    figmaUrl: "https://www.figma.com/design/PjyQoMO50dc2D81oOnn1Ul/Untitled?node-id=0-1",
     swatch: "#8ee6b5",
   },
   {
-    id: "vnnovate",
-    name: "Vnnovate — Website redesign",
-    page: "Web design",
-    project: "Vnnovate Solutions",
-    role: "UI/UX Intern",
-    year: "2025",
-    type: "Website redesign",
-    tools: ["Figma", "High-fidelity prototypes"],
+    id: "sneaker",
+    name: "Sneaker store — product page",
+    page: "Web & dashboards",
+    project: "Sneaker store concept",
+    role: "UI Designer",
+    type: "E-commerce concept",
+    tools: ["Figma", "Visual design"],
     summary:
-      "Redesign of the official Vnnovate Solutions website with a user-centric UX approach and high-fidelity, responsive prototypes.",
-    highlights: ["~25% better engagement", "~30% better navigation & user flows"],
-    figmaUrl: "",
+      "A bold e-commerce product page concept for a sneaker drop: hero product shot, size picker, add-to-cart and related products.",
+    highlights: ["Strong visual hierarchy", "Size picker & cart actions", "Related-product rail"],
+    figmaUrl: "https://www.figma.com/design/WYQ6wSABeLCGpd7uuvESJl/Untitled",
+    swatch: "#8fd3ff",
+  },
+  {
+    id: "wireframes",
+    name: "Wireframes — low fidelity",
+    page: "Wireframes",
+    project: "Wireframes",
+    role: "UX Designer",
+    type: "Wireframes",
+    tools: ["Figma", "Wireframing", "Information architecture"],
+    summary:
+      "Low-fidelity wireframes that map out structure and flow before any visual design — where layout and content decisions get made.",
+    highlights: ["Structure before styling", "Page-by-page flow"],
+    figmaUrl: "https://www.figma.com/design/tYPve3LZiZVISonUQzBBrb/Untitled",
     swatch: "#ffd54a",
   },
 ];
