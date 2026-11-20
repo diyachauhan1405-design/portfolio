@@ -22,7 +22,7 @@ function Label({ icon: Icon, children }: { icon: typeof Target; children: React.
 export default function CaseStudy() {
   const cs = caseStudy;
   return (
-    <section id="case-study" className="relative py-28 sm:py-36">
+    <section id="case-study" data-frame="Case Study — WildMind AI" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-5xl px-6">
         <SectionHeading
           eyebrow={`Case Study · ${cs.company}`}
@@ -74,7 +74,11 @@ export default function CaseStudy() {
           <Label icon={Lightbulb}>Key decisions &amp; trade-offs</Label>
           <ol className="flex flex-col gap-4">
             {cs.decisions.map((d, i) => (
-              <li key={d.title} className="glass grid gap-4 rounded-2xl p-6 sm:grid-cols-[auto_1fr]">
+              <li
+                key={d.title}
+                data-spec="Decision row · grid auto / 1fr · gap 16 · padding 24"
+                className="glass grid gap-4 rounded-2xl p-6 sm:grid-cols-[auto_1fr]"
+              >
                 <span className="font-nums flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-accent-primary to-purple-glow font-heading text-sm font-bold text-white">
                   {String(i + 1).padStart(2, "0")}
                 </span>

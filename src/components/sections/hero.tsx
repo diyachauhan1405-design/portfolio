@@ -19,7 +19,7 @@ const fadeUp: Variants = {
 
 export default function Hero() {
   return (
-    <section id="top" className="relative flex min-h-screen items-center overflow-hidden pt-32 pb-20">
+    <section id="top" data-frame="Hero" className="relative flex min-h-screen items-center overflow-hidden pt-32 pb-20">
       <AuroraBackground />
       <Particles count={18} />
 
@@ -42,6 +42,7 @@ export default function Hero() {
             initial="hidden"
             animate="show"
             variants={fadeUp}
+            data-spec="H1 · Space Grotesk Bold · 60/65 · tracking −2% · gradient fill"
             className="font-heading text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl"
           >
             Hi, I&apos;m Diya <span className="inline-block animate-[wave_2s_ease-in-out_infinite]">👋</span>
@@ -117,7 +118,7 @@ export default function Hero() {
           >
             <div className="glass flex items-center gap-2 rounded-2xl px-3 py-2 text-xs text-text-secondary shadow-lg">
               <Palette className="h-3.5 w-3.5 text-accent-secondary" />
-              #6C63FF
+              <span data-token="accent-hex">#6C63FF</span>
             </div>
           </motion.div>
 

@@ -39,6 +39,7 @@ export default function SectionHeading({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.6, delay: 0.05 }}
+        data-spec="H2 · Space Grotesk Semibold · 48/60 · center aligned"
         className="font-heading text-4xl font-semibold leading-tight sm:text-5xl"
       >
         {title}

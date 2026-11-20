@@ -10,7 +10,7 @@ const timelineIcons = [GraduationCap, Briefcase, Code2, Palette, Sparkles, MapPi
 
 export default function About() {
   return (
-    <section id="about" className="relative py-28 sm:py-36">
+    <section id="about" data-frame="About" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
           eyebrow="About Me"

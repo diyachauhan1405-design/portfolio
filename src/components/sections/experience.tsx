@@ -7,7 +7,7 @@ import { experience } from "@/data/content";
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-28 sm:py-36">
+    <section id="experience" data-frame="Experience" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-4xl px-6">
         <SectionHeading
           eyebrow="Experience"

@@ -6,13 +6,14 @@ import { profile, recruiterSummary } from "@/data/content";
 
 export default function RecruiterSummary() {
   return (
-    <section id="summary" aria-label="Summary for recruiters" className="relative py-16">
+    <section id="summary" data-frame="Recruiter Summary" aria-label="Summary for recruiters" className="relative py-16">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
+          data-spec="Card · radius 3xl · padding 40 · glass-strong · 2-col grid on lg"
           className="glass-strong gradient-border relative overflow-hidden rounded-3xl p-7 sm:p-10"
         >
           <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-accent-primary/20 blur-3xl" />

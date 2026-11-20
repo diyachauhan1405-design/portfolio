@@ -9,7 +9,7 @@ const icons = [PenTool, Code2, Wrench];
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-28 sm:py-36">
+    <section id="skills" data-frame="Skills" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
           eyebrow="Skills"

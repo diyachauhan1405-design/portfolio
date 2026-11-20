@@ -1,6 +1,7 @@
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
 import ScrollToTop from "@/components/scroll-to-top";
+import Studio from "@/components/studio/studio";
 import Hero from "@/components/sections/hero";
 import RecruiterSummary from "@/components/sections/recruiter-summary";
 import CaseStudy from "@/components/sections/case-study";
@@ -32,6 +33,7 @@ export default function Home() {
       </main>
       <Footer />
       <ScrollToTop />
+      <Studio />
     </>
   );
 }
