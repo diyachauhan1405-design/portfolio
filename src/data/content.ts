@@ -259,3 +259,88 @@ export const caseStudy = {
   reflection:
     "If I did it again, I would set up usability metrics from day one, so improvements could be measured continuously instead of estimated at milestones.",
 };
+
+// Figma files shown on /designs.
+// TODO(Diya): paste each file's share link into `figmaUrl` (Share → "Anyone with the link can view" → Copy link).
+// Optional `prototypeUrl`: a Figma prototype link (Present → Share prototype) to power the ▶ Present button.
+export type DesignFile = {
+  id: string;
+  name: string;
+  page: string;
+  project: string;
+  role: string;
+  year: string;
+  type: string;
+  tools: string[];
+  summary: string;
+  highlights: string[];
+  figmaUrl: string;
+  prototypeUrl?: string;
+  liveUrl?: string;
+  swatch: string;
+};
+
+export const designFiles: DesignFile[] = [
+  {
+    id: "wildmind",
+    name: "WildMind AI — Product UI",
+    page: "Product design",
+    project: "WildMind AI",
+    role: "UI/UX Designer & Frontend Developer",
+    year: "2025 — 2026",
+    type: "Generative AI platform",
+    tools: ["Figma", "Design system", "Prototyping"],
+    summary:
+      "Flows and screens for a generative AI platform — turning complex AI workflows into guided, user-centric steps.",
+    highlights: ["~30% better overall UX", "~25% fewer design-to-dev iterations", "Figma components mirrored in React"],
+    figmaUrl: "",
+    swatch: "#ff9ec7",
+  },
+  {
+    id: "flybit",
+    name: "FLYBIT Dynamics — Website",
+    page: "Web design",
+    project: "FLYBIT Dynamics",
+    role: "UI/UX Designer & Frontend Developer",
+    year: "2025",
+    type: "Marketing website",
+    tools: ["Figma", "Responsive design", "Design system"],
+    summary:
+      "Service, city-specific, blog and portfolio pages for a drone light show company, designed for a conversion-focused enquiry flow.",
+    highlights: ["Consistent design system across page types", "Designed mobile-first", "Shipped from Figma to production"],
+    figmaUrl: "",
+    liveUrl: "https://flybitdynamics.com/",
+    swatch: "#8fd3ff",
+  },
+  {
+    id: "incsmart",
+    name: "IncsSmart — Corporate site",
+    page: "Web design",
+    project: "IncsSmart",
+    role: "UI/UX Designer & Frontend Developer",
+    year: "2025",
+    type: "Corporate website",
+    tools: ["Figma", "Information architecture"],
+    summary:
+      "Product, service and industry use-case pages for an IoT and energy management company, translating business requirements into clean UI.",
+    highlights: ["Clear IA for products & industries", "Responsive page templates"],
+    figmaUrl: "",
+    liveUrl: "https://incsmart-web.vercel.app/",
+    swatch: "#8ee6b5",
+  },
+  {
+    id: "vnnovate",
+    name: "Vnnovate — Website redesign",
+    page: "Web design",
+    project: "Vnnovate Solutions",
+    role: "UI/UX Intern",
+    year: "2025",
+    type: "Website redesign",
+    tools: ["Figma", "High-fidelity prototypes"],
+    summary:
+      "Redesign of the official Vnnovate Solutions website with a user-centric UX approach and high-fidelity, responsive prototypes.",
+    highlights: ["~25% better engagement", "~30% better navigation & user flows"],
+    figmaUrl: "",
+    swatch: "#ffd54a",
+  },
+];

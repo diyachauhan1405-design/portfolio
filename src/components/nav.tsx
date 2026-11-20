@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -66,6 +67,12 @@ export default function Nav() {
             );
           })}
           <span className="mx-1 h-5 w-px bg-border" />
+          <Link
+            href="/designs"
+            className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-text-primary hover:bg-note-pink"
+          >
+            <span className="h-2 w-2 rounded-full bg-[#0d99ff]" /> Figma files
+          </Link>
           <a
             href="resume.pdf"
             download="Diya_Chauhan_Resume.pdf"
@@ -107,6 +114,15 @@ export default function Nav() {
                   </a>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/designs"
+                  onClick={() => setOpen(false)}
+                  className="block rounded-md px-3 py-3 font-display text-lg font-medium hover:bg-black/5"
+                >
+                  Figma files ↗
+                </Link>
+              </li>
               <li>
                 <a
                   href="resume.pdf"

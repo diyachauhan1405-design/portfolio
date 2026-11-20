@@ -16,6 +16,7 @@ import {
   Search,
   SlidersHorizontal,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { profile } from "@/data/content";
 import { cn } from "@/lib/utils";
 
@@ -451,6 +452,7 @@ function CommandPalette({
   onAccent: (i: number) => void;
   onCopyEmail: () => void;
 }) {
+  const router = useRouter();
   const [query, setQuery] = useState("");
   const [index, setIndex] = useState(0);
 
@@ -470,6 +472,13 @@ function CommandPalette({
         },
       },
       { id: "email", group: "For recruiters", label: "Copy email address", hint: profile.email, Icon: Mail, run: onCopyEmail },
+      {
+        id: "figma",
+        group: "For recruiters",
+        label: "Open Figma design files",
+        Icon: PenTool,
+        run: () => router.push("/designs"),
+      },
       {
         id: "linkedin",
         group: "For recruiters",
@@ -500,7 +509,7 @@ function CommandPalette({
         run: () => scrollToId(f.id),
       })),
     ];
-  }, [frames, mode, onToggleMode, onAccent, onCopyEmail]);
+  }, [frames, mode, onToggleMode, onAccent, onCopyEmail, router]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
