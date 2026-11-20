@@ -9,8 +9,8 @@ import { cn } from "@/lib/utils";
 const links = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
-  { label: "Process", href: "#process" },
   { label: "Work", href: "#work" },
+  { label: "Case Study", href: "#case-study" },
   { label: "Education", href: "#education" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
@@ -59,7 +59,7 @@ export default function Nav() {
     <motion.header
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, delay: 2.1, ease: "easeOut" }}
+      transition={{ duration: 0.7, delay: 0, ease: "easeOut" }}
       className="fixed inset-x-0 top-0 z-50 flex flex-col items-center px-4 pt-4"
     >
       <nav
