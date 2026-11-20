@@ -25,9 +25,9 @@ export default function ScrollToTop() {
           transition={{ duration: 0.2 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Scroll to top"
-          className="fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-accent-primary to-purple-glow shadow-[0_0_24px_rgba(108,99,255,0.4)] transition-transform hover:scale-110 hover:shadow-[0_0_32px_rgba(108,99,255,0.6)]"
+          className="sticker fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center transition-transform hover:-rotate-12 hover:scale-110"
         >
-          <ArrowUp className="h-4 w-4 text-white" />
+          <ArrowUp className="h-4 w-4 text-text-primary" />
         </motion.button>
       )}
     </AnimatePresence>

@@ -22,10 +22,10 @@ import { cn } from "@/lib/utils";
 type Mode = "build" | "design";
 
 const ACCENTS = [
-  { name: "Indigo", primary: "#6c63ff", secondary: "#00e5ff", glow: "#7c3aed" },
-  { name: "Coral", primary: "#ff6b6b", secondary: "#ffd166", glow: "#e8466b" },
-  { name: "Lime", primary: "#84cc16", secondary: "#22d3ee", glow: "#16a34a" },
-  { name: "Amber", primary: "#f59e0b", secondary: "#f472b6", glow: "#ea580c" },
+  { name: "Tomato", primary: "#ff5a36", secondary: "#2f6bff", glow: "#8b5cf6" },
+  { name: "Cobalt", primary: "#2f6bff", secondary: "#ff5a36", glow: "#8b5cf6" },
+  { name: "Magenta", primary: "#e0369a", secondary: "#0f9d63", glow: "#ff5a36" },
+  { name: "Emerald", primary: "#0f9d63", secondary: "#e0369a", glow: "#2f6bff" },
 ] as const;
 
 type Tokens = { accent: number; radius: number; motion: boolean };
@@ -207,11 +207,11 @@ export default function Studio() {
                     className={cn(
                       "flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left text-xs transition-colors",
                       current === f.id
-                        ? "bg-accent-primary/20 text-text-primary"
-                        : "text-text-secondary hover:bg-white/5 hover:text-text-primary"
+                        ? "bg-note-yellow text-text-primary"
+                        : "text-text-secondary hover:bg-black/5 hover:text-text-primary"
                     )}
                   >
-                    <span className="font-mono text-[10px] text-accent-secondary">#</span>
+                    <span className="font-mono text-[10px] text-accent-primary">#</span>
                     {f.name}
                   </button>
                 </li>
@@ -265,7 +265,7 @@ export default function Studio() {
                         title={a.name}
                         className={cn(
                           "h-8 w-8 rounded-full border-2 transition-transform hover:scale-110",
-                          tokens.accent === i ? "border-white" : "border-transparent"
+                          tokens.accent === i ? "border-ink ring-2 ring-white" : "border-transparent"
                         )}
                         style={{ background: `linear-gradient(135deg, ${a.primary}, ${a.secondary})` }}
                       />
@@ -297,7 +297,7 @@ export default function Studio() {
                     onClick={() => setTokens((t) => ({ ...t, motion: !t.motion }))}
                     className={cn(
                       "relative h-5 w-9 rounded-full transition-colors",
-                      tokens.motion ? "bg-accent-primary" : "bg-white/15"
+                      tokens.motion ? "bg-accent-primary" : "bg-black/15"
                     )}
                   >
                     <span
@@ -321,7 +321,7 @@ export default function Studio() {
                       {copied === "css" ? "Copied" : "Copy CSS"}
                     </button>
                   </div>
-                  <pre className="overflow-x-auto rounded-xl bg-black/40 p-3 font-mono text-[11px] leading-relaxed text-accent-secondary">
+                  <pre className="overflow-x-auto rounded-xl bg-ink p-3 font-mono text-[11px] leading-relaxed text-note-yellow">
                     {cssFor(tokens)}
                   </pre>
                 </div>
@@ -383,7 +383,7 @@ export default function Studio() {
                 {mode === value && (
                   <motion.span
                     layoutId="studio-mode-pill"
-                    className="absolute inset-0 rounded-full bg-gradient-to-r from-accent-primary to-purple-glow"
+                    className="absolute inset-0 rounded-full bg-ink"
                     transition={{ type: "spring", stiffness: 420, damping: 32 }}
                   />
                 )}
@@ -391,7 +391,7 @@ export default function Studio() {
                 <span className="relative">{label}</span>
               </button>
             ))}
-            <span className="mx-1 h-5 w-px bg-white/10" />
+            <span className="mx-1 h-5 w-px bg-black/15" />
             <button
               type="button"
               onClick={() => setPaletteOpen(true)}
@@ -528,7 +528,7 @@ function CommandPalette({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[90] flex items-start justify-center bg-black/60 px-4 pt-[14vh] backdrop-blur-sm"
+          className="fixed inset-0 z-[90] flex items-start justify-center bg-black/30 px-4 pt-[14vh] backdrop-blur-sm"
           onMouseDown={(e) => e.target === e.currentTarget && close()}
         >
           <motion.div
@@ -541,7 +541,7 @@ function CommandPalette({
             transition={{ duration: 0.18 }}
             className="studio-panel w-full max-w-lg overflow-hidden rounded-2xl"
           >
-            <div className="flex items-center gap-3 border-b border-white/10 px-4">
+            <div className="flex items-center gap-3 border-b border-border px-4">
               <Search className="h-4 w-4 text-text-secondary" />
               <input
                 autoFocus
@@ -569,7 +569,7 @@ function CommandPalette({
                 aria-label="Search commands"
                 className="h-14 flex-1 bg-transparent text-sm text-text-primary outline-none placeholder:text-text-secondary"
               />
-              <kbd className="rounded-md border border-white/10 px-1.5 py-0.5 font-mono text-[10px] text-text-secondary">
+              <kbd className="rounded-md border border-border px-1.5 py-0.5 font-mono text-[10px] text-text-secondary">
                 esc
               </kbd>
             </div>
@@ -595,7 +595,7 @@ function CommandPalette({
                       onClick={() => choose(item)}
                       className={cn(
                         "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm transition-colors",
-                        i === index ? "bg-accent-primary/20 text-text-primary" : "text-text-secondary"
+                        i === index ? "bg-note-yellow text-text-primary" : "text-text-secondary"
                       )}
                     >
                       <item.Icon className="h-4 w-4 shrink-0" />

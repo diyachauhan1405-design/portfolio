@@ -1,110 +1,78 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, CheckCircle2, Trophy } from "lucide-react";
 import SectionHeading from "@/components/ui/section-heading";
 import { experience } from "@/data/content";
 
+const notes = ["bg-note-pink", "bg-note-sky", "bg-note-mint"];
+const dots = ["bg-accent-primary", "bg-accent-secondary", "bg-success"];
+
 export default function Experience() {
   return (
-    <section id="experience" data-frame="Experience" className="relative py-28 sm:py-36">
-      <div className="mx-auto max-w-4xl px-6">
+    <section id="experience" data-frame="Journey" className="relative py-24 sm:py-32">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <SectionHeading
-          eyebrow="Experience"
+          eyebrow="my journey"
+          tone="mint"
           title={
             <>
-              Where I&apos;ve been <span className="text-gradient">designing & building</span>
+              Where I&apos;ve been <span className="marker-pink">designing</span> &amp;{" "}
+              <span className="marker-mint">building</span>
             </>
           }
         />
 
-        <div className="relative mt-16">
-          <div className="absolute left-6 top-2 h-[calc(100%-1rem)] w-px bg-gradient-to-b from-accent-primary via-border to-transparent" />
+        <ol className="relative mt-16 border-l-2 border-dashed border-ink/25 pl-8 sm:pl-12">
+          {experience.map((job, i) => (
+            <motion.li
+              key={`${job.company}-${job.role}`}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.55, delay: i * 0.05 }}
+              className="relative mb-14 last:mb-0"
+            >
+              <span
+                className={`absolute -left-[41px] top-2 h-4 w-4 rounded-full border-[3px] border-bg sm:-left-[57px] ${dots[i % dots.length]}`}
+              />
+              <p className="font-nums text-sm font-semibold text-text-secondary">{job.period}</p>
+              <h3 className="mt-1 font-display text-3xl font-semibold leading-tight">{job.role}</h3>
+              <p className="text-base font-medium text-accent-primary">@ {job.company}</p>
 
-          <div className="flex flex-col gap-14">
-            {experience.map((job, i) => (
-              <motion.div
-                key={`${job.company}-${job.role}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="relative pl-20"
-              >
-                <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-primary to-purple-glow shadow-[0_0_28px_rgba(108,99,255,0.5)]">
-                  <Briefcase className="h-5 w-5 text-white" />
-                </div>
+              {job.impact && job.impact.length > 0 && (
+                <ul className="mt-5 flex flex-wrap gap-3">
+                  {job.impact.map((m, k) => (
+                    <li
+                      key={m.label}
+                      style={{ rotate: `${k % 2 ? 1.5 : -1.5}deg` }}
+                      className={`paper px-3.5 py-2 ${notes[(i + k) % notes.length]}`}
+                    >
+                      <span className="font-display text-lg font-semibold">{m.value}</span>
+                      <span className="ml-2 text-sm">{m.label}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
 
-                <div className="glass rounded-2xl p-7">
-                  <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <div>
-                      <h3 className="font-heading text-xl font-semibold">{job.company}</h3>
-                      <p className="text-sm text-accent-secondary">{job.role}</p>
-                    </div>
-                    <span className="font-nums text-sm text-text-secondary">{job.period}</span>
-                  </div>
+              <ul className="mt-5 flex flex-col gap-2">
+                {[...job.achievements, ...job.responsibilities].slice(0, 4).map((r) => (
+                  <li key={r} className="flex gap-3 text-[15px] leading-relaxed text-text-secondary">
+                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ink/40" />
+                    {r}
+                  </li>
+                ))}
+              </ul>
 
-                  {job.impact && job.impact.length > 0 && (
-                    <div className="mt-5 flex flex-wrap gap-3">
-                      {job.impact.map((m) => (
-                        <div
-                          key={m.label}
-                          className="rounded-xl border border-accent-primary/25 bg-accent-primary/10 px-3.5 py-2"
-                        >
-                          <span className="font-nums font-heading text-base font-bold text-gradient-accent">
-                            {m.value}
-                          </span>
-                          <span className="ml-2 text-xs text-text-secondary">{m.label}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
-                  <div className="mt-6 grid gap-6 sm:grid-cols-2">
-                    <div>
-                      <p className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-text-secondary">
-                        <CheckCircle2 className="h-3.5 w-3.5" /> Responsibilities
-                      </p>
-                      <ul className="flex flex-col gap-2">
-                        {job.responsibilities.map((r) => (
-                          <li key={r} className="text-sm leading-relaxed text-text-secondary">
-                            <span className="mr-2 text-accent-primary">—</span>
-                            {r}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div>
-                      <p className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-text-secondary">
-                        <Trophy className="h-3.5 w-3.5" /> Achievements
-                      </p>
-                      <ul className="flex flex-col gap-2">
-                        {job.achievements.map((a) => (
-                          <li key={a} className="text-sm leading-relaxed text-text-secondary">
-                            <span className="mr-2 text-accent-secondary">—</span>
-                            {a}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 flex flex-wrap gap-2 border-t border-border pt-5">
-                    {job.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-full border border-border bg-white/5 px-3 py-1 text-xs text-text-secondary"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {job.tech.map((t) => (
+                  <li key={t} className="rounded-full border border-border bg-card px-3 py-1 text-xs font-medium">
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </motion.li>
+          ))}
+        </ol>
       </div>
     </section>
   );

@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/providers/smooth-scroll-provider";
-import CursorSpotlight from "@/components/cursor-spotlight";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  axes: ["opsz", "SOFT"],
+  style: ["normal", "italic"],
 });
 
 const inter = Inter({
@@ -19,7 +19,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Diya Chauhan — UI/UX Designer & Frontend Developer",
   description:
-    "Diya Chauhan is a UI/UX Designer & Frontend Developer crafting intuitive digital products, scalable web experiences, and meaningful user interactions.",
+    "Diya Chauhan designs interfaces and builds them in code — UI/UX Designer & Frontend Developer focused on AI products. Immediate joiner, Ahmedabad.",
   keywords: [
     "Diya Chauhan",
     "UI/UX Designer",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Diya Chauhan — UI/UX Designer & Frontend Developer",
     description:
-      "Crafting intuitive digital products, scalable web experiences, and meaningful user interactions.",
+      "I design interfaces, then I build them in code. UI/UX Designer & Frontend Developer focused on AI products.",
     type: "website",
   },
 };
@@ -43,11 +43,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} h-full scroll-smooth antialiased`}
+      className={`${fraunces.variable} ${inter.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-bg text-text-primary font-body selection:bg-accent-primary/30 selection:text-white">
+      <body className="min-h-full flex flex-col bg-bg text-text-primary font-body ">
         <SmoothScrollProvider>
-          <CursorSpotlight />
           {children}
         </SmoothScrollProvider>
       </body>

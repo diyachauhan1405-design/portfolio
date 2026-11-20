@@ -14,32 +14,6 @@ export const profile = {
   },
 };
 
-export const heroStack = ["React.js", "Next.js", "Figma", "Tailwind CSS", "UX Research", "Design Systems"];
-
-export const aboutCards = [
-  {
-    title: "Professional Introduction",
-    body: "Frontend Developer and UI/UX Designer with hands-on experience across the full product pipeline — from user research and wireframing to building responsive, production-grade interfaces in React.js and Next.js.",
-  },
-  {
-    title: "Career Objective",
-    body: "Comfortable owning a feature end-to-end: translating Figma designs into pixel-accurate, accessible, reusable components, and shipping them into real products.",
-  },
-  {
-    title: "Creative Philosophy",
-    body: "Good design and good code share the same discipline — clarity, consistency, and attention to the details users feel but never notice. Immediate joiner, ready to contribute from day one.",
-  },
-];
-
-export const quickStats = [
-  { label: "Years of Experience", value: 1.5, suffix: "+" },
-  { label: "Companies", value: 2, suffix: "" },
-  { label: "Client Projects", value: 2, suffix: "" },
-  { label: "Internships", value: 2, suffix: "" },
-  { label: "Certifications", value: 3, suffix: "" },
-  { label: "Core Skills", value: 20, suffix: "+" },
-];
-
 export const education = [
   {
     institution: "IIT Kharagpur",
@@ -55,14 +29,6 @@ export const education = [
     period: "Aug 2021 — May 2025",
     status: "Completed",
   },
-];
-
-export const careerTimeline = [
-  { label: "Education", detail: "Bachelor's, Computer Engineering — U.V. Patel College of Engineering, Ganpat University (2021 – 2025)" },
-  { label: "Python Development Intern", detail: "Vnnovate Solutions Pvt Ltd (Dec 2023 – Jan 2024)" },
-  { label: "UI/UX Intern", detail: "Vnnovate Solutions Pvt Ltd (Jan 2025 – Jun 2025)" },
-  { label: "UI/UX Designer & Frontend Developer", detail: "WildMind AI (Aug 2025 – July 2026)" },
-  { label: "Post Graduate Studies", detail: "AI Software Engineering — IIT Kharagpur (Oct 2026 – Jul 2027)" },
 ];
 
 export const skillCategories = [
@@ -105,20 +71,14 @@ export const skillCategories = [
   },
 ];
 
-export const designProcess = [
-  { phase: "Discover", detail: "Research, Empathize" },
-  { phase: "Define", detail: "User Persona, Information Architecture, User Flow" },
-  { phase: "Wireframes", detail: "Low Fidelity, High Fidelity" },
-  { phase: "Prototype", detail: "Testing, Iteration" },
-  { phase: "Development", detail: "Build & Launch" },
-];
-
 export const projects = [
   {
     name: "FLYBIT Dynamics",
     role: "UI/UX Designer & Frontend Developer",
     timeline: "2025",
     category: "Marketing Website",
+    tagline: "A website for a drone light show company",
+    note: "sky",
     tech: ["Figma", "React", "Next.js", "Tailwind CSS"],
     description:
       "Designed and developed the official website for a drone light show company — from Figma to production. Built service, city-specific, blog, and portfolio pages on a consistent design system, with a conversion-focused layout that showcases drone shows and improves the client inquiry experience across devices.",
@@ -132,6 +92,8 @@ export const projects = [
     role: "UI/UX Designer & Frontend Developer",
     timeline: "2025 — 2026",
     category: "AI Product",
+    tagline: "UX + frontend for a generative AI platform",
+    note: "pink",
     tech: ["Figma", "React.js", "Next.js", "Design Systems"],
     description:
       "Designed and developed intuitive, scalable experiences for a generative AI platform — translating complex AI workflows into seamless, user-centric products. Improved overall UX by ~30% and built reusable React/Next.js components that cut frontend development time by ~30%.",
@@ -145,6 +107,8 @@ export const projects = [
     role: "UI/UX Designer & Frontend Developer",
     timeline: "2025",
     category: "Corporate Website",
+    tagline: "A corporate site for IoT & energy solutions",
+    note: "mint",
     tech: ["Figma", "HTML5", "CSS3", "Bootstrap"],
     description:
       "Designed and developed a corporate website showcasing IoT and energy management solutions. Created responsive pages for products, services, and industry use cases — translating business requirements into clean, user-friendly interfaces that strengthen the company's digital presence.",
@@ -211,15 +175,6 @@ export const experience = [
     impact: [{ value: "~20%", label: "Efficiency" }],
     tech: ["Python", "OpenCV", "CVZone", "Firebase", "NumPy", "MediaPipe"],
   },
-];
-
-export const achievementStats = [
-  { label: "Years of Experience", value: 1.5, suffix: "+" },
-  { label: "Companies", value: 2, suffix: "" },
-  { label: "Client Projects", value: 2, suffix: "" },
-  { label: "Internships", value: 2, suffix: "" },
-  { label: "Certifications", value: 3, suffix: "" },
-  { label: "Core Skills", value: 20, suffix: "+" },
 ];
 
 export const certifications = [
