@@ -3,16 +3,27 @@
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
+const tones = {
+  yellow: "bg-note-yellow",
+  pink: "bg-note-pink",
+  mint: "bg-note-mint",
+  sky: "bg-note-sky",
+  lilac: "bg-note-lilac",
+  orange: "bg-note-orange",
+} as const;
+
 export default function SectionHeading({
   eyebrow,
   title,
   description,
-  align = "center",
+  tone = "yellow",
+  align = "left",
   className,
 }: {
   eyebrow: string;
   title: React.ReactNode;
   description?: string;
+  tone?: keyof typeof tones;
   align?: "center" | "left";
   className?: string;
 }) {
@@ -25,13 +36,12 @@ export default function SectionHeading({
       )}
     >
       <motion.span
-        initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, rotate: 0, y: 8 }}
+        whileInView={{ opacity: 1, rotate: -3, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.5 }}
-        className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-accent-secondary"
+        transition={{ type: "spring", stiffness: 200, damping: 14 }}
+        className={cn("paper inline-block px-3 py-1 text-sm font-semibold", tones[tone])}
       >
-        <span className="h-1.5 w-1.5 rounded-full bg-accent-secondary shadow-[0_0_10px_2px_rgba(0,229,255,0.6)]" />
         {eyebrow}
       </motion.span>
       <motion.h2
@@ -39,8 +49,8 @@ export default function SectionHeading({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.6, delay: 0.05 }}
-        data-spec="H2 · Space Grotesk Semibold · 48/60 · center aligned"
-        className="font-heading text-4xl font-semibold leading-tight sm:text-5xl"
+        data-spec="H2 · Fraunces Semibold · 56/58 · tracking −2%"
+        className="font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-[3.5rem]"
       >
         {title}
       </motion.h2>
@@ -50,7 +60,7 @@ export default function SectionHeading({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="max-w-2xl text-balance text-base text-text-secondary sm:text-lg"
+          className="max-w-2xl text-base text-text-secondary sm:text-lg"
         >
           {description}
         </motion.p>

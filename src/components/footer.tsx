@@ -1,58 +1,40 @@
-import { Code2, Link2, Mail } from "lucide-react";
 import { profile } from "@/data/content";
 
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
+const links = [
+  { label: "Home", href: "#top" },
   { label: "Work", href: "#work" },
-  { label: "Education", href: "#education" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "Case study", href: "#case-study" },
+  { label: "Journey", href: "#experience" },
+  { label: "LinkedIn ↗", href: profile.socials.linkedin },
+  { label: "Resume ↓", href: "resume.pdf" },
 ];
-
-const socials = [
-  { label: "LinkedIn", href: profile.socials.linkedin, icon: Link2 },
-  { label: "GitHub", href: profile.socials.github, icon: Code2 },
-  { label: "Email", href: `mailto:${profile.email}`, icon: Mail },
-].filter((s) => s.href);
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-border">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 py-10 sm:flex-row sm:justify-between">
-        <a href="#top" className="font-heading text-lg font-semibold tracking-tight">
-          DC<span className="text-accent-secondary">.</span>
-        </a>
-
-        <ul className="flex flex-wrap items-center justify-center gap-6 text-sm text-text-secondary">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} className="transition-colors hover:text-text-primary">
-                {link.label}
+    <footer className="mx-auto w-full max-w-6xl px-4 pb-28 sm:px-6">
+      <div className="flex flex-col gap-6 border-t border-ink/20 pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-text-secondary">
+          {links.map((l) => (
+            <li key={l.label}>
+              <a
+                href={l.href}
+                {...(l.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                {...(l.href.endsWith(".pdf") ? { download: "Diya_Chauhan_Resume.pdf" } : {})}
+                className="hover:text-text-primary"
+              >
+                {l.label}
               </a>
             </li>
           ))}
         </ul>
-
-        <div className="flex items-center gap-3">
-          {socials.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              target={s.href.startsWith("http") ? "_blank" : undefined}
-              rel="noopener noreferrer"
-              aria-label={s.label}
-              className="glass flex h-9 w-9 items-center justify-center rounded-full text-text-secondary transition-colors hover:text-accent-secondary"
-            >
-              <s.icon className="h-4 w-4" />
-            </a>
-          ))}
-        </div>
+        <a href="#top" className="text-sm font-medium text-text-secondary hover:text-text-primary">
+          Back to top ↑
+        </a>
       </div>
-
-      <div className="border-t border-border py-6 text-center text-xs text-text-secondary">
-        <p>© {new Date().getFullYear()} {profile.name}. All rights reserved.</p>
-      </div>
+      <p className="mt-6 text-sm text-text-secondary">
+        {profile.name} © {new Date().getFullYear()} · Designed in Figma, built in Next.js — by me. Press{" "}
+        <kbd className="rounded border border-border bg-card px-1.5 font-mono text-xs">D</kbd> to see how.
+      </p>
     </footer>
   );
 }

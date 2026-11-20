@@ -1,110 +1,121 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Code2, ExternalLink } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Code2 } from "lucide-react";
 import SectionHeading from "@/components/ui/section-heading";
 import { projects } from "@/data/content";
+import { cn } from "@/lib/utils";
+
+const noteBg: Record<string, string> = {
+  sky: "bg-note-sky",
+  pink: "bg-note-pink",
+  mint: "bg-note-mint",
+  yellow: "bg-note-yellow",
+  lilac: "bg-note-lilac",
+  orange: "bg-note-orange",
+};
+const tilts = [-2.5, 1.5, -1.5, 2];
 
 export default function Projects() {
+  const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   return (
-    <section id="work" data-frame="Featured Work" className="relative py-28 sm:py-36">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="work" data-frame="Featured Work" className="relative py-24 sm:py-32">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
-          eyebrow="Featured Work"
+          eyebrow="selected work"
+          tone="pink"
           title={
             <>
-              Selected <span className="text-gradient">projects</span>
+              Things I&apos;ve <span className="italic text-accent-primary">designed</span> &amp;{" "}
+              <span className="squiggle">shipped</span>, 2023–2026
             </>
           }
-          description="A mix of product design, design systems, and frontend builds — from research to production."
+          description="Real products, live on the web — from first wireframe to production code."
         />
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, i) => (
-            <motion.article
-              key={project.name}
-              initial={{ opacity: 0, y: 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
-              data-spec="Project card · radius 3xl · hover lift −8px · image 208px"
-              className="gradient-border group relative overflow-hidden rounded-3xl"
-            >
-              <div className="glass relative flex h-full flex-col overflow-hidden rounded-3xl transition-transform duration-500 group-hover:-translate-y-2">
-                {/* Clickable image header */}
+        <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
+          {projects.map((p, i) => {
+            const hasLive = p.liveUrl && p.liveUrl !== "#";
+            const hasCode = p.github && p.github !== "#";
+            return (
+              <motion.article
+                key={p.name}
+                initial={{ opacity: 0, y: 40, rotate: 0 }}
+                whileInView={{ opacity: 1, y: 0, rotate: tilts[i % tilts.length] }}
+                whileHover={{ rotate: 0, y: -8, scale: 1.02 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ type: "spring", stiffness: 150, damping: 16, delay: i * 0.06 }}
+                data-spec="Project card · tape · paper shadow · hover straightens"
+                className={cn("paper tape flex flex-col p-3 pb-5", noteBg[p.note] ?? "bg-note-yellow")}
+              >
                 <a
-                  href={project.liveUrl || "#"}
-                  target="_blank"
+                  href={hasLive ? p.liveUrl : "#case-study"}
+                  target={hasLive ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  aria-label={`Visit ${project.name}`}
-                  className={`relative flex h-52 items-end overflow-hidden bg-gradient-to-br ${project.gradient} p-6 cursor-pointer`}
+                  aria-label={`Open ${p.name}`}
+                  className="block overflow-hidden rounded-[3px] bg-card"
                 >
-                  {project.image && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${project.image}`}
-                      alt={project.name}
-                      className="absolute inset-0 h-full w-full object-cover object-center opacity-90 transition-transform duration-700 group-hover:scale-105"
-                    />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                  <span className="relative z-10 rounded-full bg-black/30 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
-                    {project.category}
-                  </span>
-                  <ExternalLink className="absolute right-4 top-4 z-10 h-4 w-4 text-white/50 transition-colors group-hover:text-white/90" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${base}${p.image}`}
+                    alt=""
+                    className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
                 </a>
-
-                <div className="flex flex-1 flex-col gap-4 p-7">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <h3 className="font-heading text-xl font-semibold">{project.name}</h3>
-                      <p className="mt-1 text-sm text-text-secondary">
-                        {project.role} · {project.timeline}
-                      </p>
-                    </div>
-                    <ArrowUpRight className="h-5 w-5 shrink-0 text-text-secondary/40" />
-                  </div>
-
-                  <p className="text-sm leading-relaxed text-text-secondary">{project.description}</p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-full border border-border bg-white/5 px-3 py-1 text-xs text-text-secondary"
-                      >
-                        {tech}
-                      </span>
+                <div className="flex flex-1 flex-col px-2 pt-4">
+                  <p className="text-xs font-medium text-black/60">
+                    {p.timeline} · {p.category}
+                  </p>
+                  <h3 className="mt-1 font-display text-2xl font-semibold leading-tight">{p.name}</h3>
+                  <p className="mt-1 text-sm text-black/75">{p.tagline}</p>
+                  <ul className="mt-3 flex flex-wrap gap-1.5">
+                    {p.tech.map((t) => (
+                      <li key={t} className="rounded bg-white/55 px-2 py-0.5 text-[11px] font-medium">
+                        {t}
+                      </li>
                     ))}
-                  </div>
-
-                  <div className="mt-auto flex items-center gap-4 pt-4 text-sm">
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-medium text-accent-secondary transition-colors hover:text-accent-primary"
-                      >
-                        Visit Site
+                  </ul>
+                  <div className="mt-auto flex items-center justify-between border-t border-dashed border-black/25 pt-3 text-sm font-semibold">
+                    {hasLive ? (
+                      <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:underline">
+                        visit <ArrowUpRight className="h-4 w-4" />
+                      </a>
+                    ) : (
+                      <a href="#case-study" className="inline-flex items-center gap-1 hover:underline">
+                        case study <ArrowRight className="h-4 w-4" />
                       </a>
                     )}
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="GitHub repository"
-                        className="flex items-center gap-1 text-text-secondary transition-colors hover:text-text-primary"
-                      >
+                    {hasCode && (
+                      <a href={p.github} target="_blank" rel="noopener noreferrer" aria-label={`${p.name} source code`}>
                         <Code2 className="h-4 w-4" />
                       </a>
                     )}
                   </div>
                 </div>
-              </div>
-            </motion.article>
-          ))}
+              </motion.article>
+            );
+          })}
+
+          {/* Case study teaser card */}
+          <motion.a
+            href="#case-study"
+            initial={{ opacity: 0, y: 40, rotate: 0 }}
+            whileInView={{ opacity: 1, y: 0, rotate: 2 }}
+            whileHover={{ rotate: 0, y: -8, scale: 1.02 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ type: "spring", stiffness: 150, damping: 16, delay: 0.2 }}
+            className="paper tape flex flex-col justify-between bg-note-yellow p-6 lined"
+          >
+            <div>
+              <p className="text-xs font-medium text-black/60">deep dive</p>
+              <p className="mt-3 font-display text-3xl font-semibold leading-tight">
+                How I made a generative AI platform feel simple
+              </p>
+            </div>
+            <p className="mt-6 inline-flex items-center gap-2 font-semibold">
+              Read the case study <ArrowRight className="h-4 w-4" />
+            </p>
+          </motion.a>
         </div>
       </div>
     </section>

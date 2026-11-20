@@ -4,58 +4,50 @@ import { motion } from "framer-motion";
 import { Award, GraduationCap, MapPin } from "lucide-react";
 import SectionHeading from "@/components/ui/section-heading";
 import { certifications, education } from "@/data/content";
-import { cn } from "@/lib/utils";
+
+const certColors = ["bg-note-pink", "bg-note-mint", "bg-note-lilac"];
 
 export default function Education() {
   return (
-    <section id="education" data-frame="Education" className="relative py-28 sm:py-36">
-      <div className="mx-auto max-w-4xl px-6">
+    <section id="education" data-frame="Education" className="relative py-24 sm:py-32">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <SectionHeading
-          eyebrow="Education"
+          eyebrow="education"
+          tone="lilac"
           title={
             <>
-              Strong foundations, <span className="text-gradient">still building</span>
+              Strong foundations, <span className="squiggle">still learning</span>
             </>
           }
-          description="A computer engineering degree, now followed by a postgraduate program in AI software engineering — plus certifications along the way."
         />
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2">
+        <div className="mt-14 grid gap-6 md:grid-cols-2">
           {education.map((item, i) => {
             const inProgress = item.status === "In progress";
             return (
               <motion.article
-                key={`${item.institution}-${item.degree}`}
+                key={item.institution}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="glass gradient-border relative flex flex-col gap-6 rounded-2xl p-7 transition-transform duration-300 hover:-translate-y-1.5"
+                className="studio-box flex flex-col gap-5 rounded-2xl border-2 border-ink bg-card p-7 shadow-[6px_6px_0_0_var(--text-primary)]"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-primary to-purple-glow shadow-[0_0_28px_rgba(108,99,255,0.5)]">
-                    <GraduationCap className="h-5 w-5 text-white" />
-                  </div>
-
+                  <span className={`sticker flex h-12 w-12 items-center justify-center ${i ? "" : ""}`}>
+                    <GraduationCap className="h-6 w-6 text-accent-secondary" />
+                  </span>
                   <span
-                    className={cn(
-                      "inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium",
-                      inProgress
-                        ? "bg-success/10 text-success"
-                        : "border border-border bg-white/5 text-text-secondary"
-                    )}
+                    className={`paper rotate-2 px-3 py-1 text-xs font-semibold ${inProgress ? "bg-note-mint" : "bg-note-yellow"}`}
                   >
-                    {inProgress && <span className="h-1.5 w-1.5 animate-pulse-glow rounded-full bg-success" />}
                     {item.status}
                   </span>
                 </div>
-
                 <div>
-                  <h3 className="font-heading text-xl font-semibold">{item.institution}</h3>
-                  <p className="mt-1 text-sm text-accent-secondary">{item.degree}</p>
+                  <h3 className="font-display text-2xl font-semibold leading-tight">{item.institution}</h3>
+                  <p className="mt-1 font-medium text-accent-primary">{item.degree}</p>
                 </div>
-
-                <div className="mt-auto flex flex-wrap items-center justify-between gap-2 border-t border-border pt-5 text-sm text-text-secondary">
+                <div className="mt-auto flex flex-wrap items-center justify-between gap-2 border-t border-dashed border-border pt-4 text-sm text-text-secondary">
                   <span className="font-nums">{item.period}</span>
                   <span className="inline-flex items-center gap-1.5">
                     <MapPin className="h-3.5 w-3.5" />
@@ -67,29 +59,25 @@ export default function Education() {
           })}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
-          className="mt-14"
-        >
-          <p className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-text-secondary">
-            <Award className="h-3.5 w-3.5 text-accent-secondary" /> Certifications
-          </p>
-          <ul className="grid gap-4 sm:grid-cols-3">
-            {certifications.map((cert) => (
-              <li
-                key={cert.name}
-                className="glass flex flex-col gap-1.5 rounded-2xl p-5 transition-colors hover:border-accent-secondary/40"
-              >
-                <span className="font-heading text-sm font-semibold">{cert.name}</span>
-                <span className="text-xs text-text-secondary">{cert.issuer}</span>
-                <span className="font-nums mt-auto pt-2 text-xs text-accent-secondary">{cert.date}</span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
+        <p className="mt-14 mb-5 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-text-secondary">
+          <Award className="h-4 w-4 text-accent-primary" /> Certifications
+        </p>
+        <ul className="grid gap-5 sm:grid-cols-3">
+          {certifications.map((cert, i) => (
+            <motion.li
+              key={cert.name}
+              initial={{ opacity: 0, scale: 0.9, rotate: 0 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: i % 2 ? 2 : -2 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 180, damping: 14, delay: i * 0.06 }}
+              className={`paper flex flex-col gap-1 p-5 ${certColors[i % certColors.length]}`}
+            >
+              <span className="font-display text-lg font-semibold">{cert.name}</span>
+              <span className="text-sm text-black/70">{cert.issuer}</span>
+              <span className="font-nums mt-2 text-xs font-semibold">{cert.date}</span>
+            </motion.li>
+          ))}
+        </ul>
       </div>
     </section>
   );
