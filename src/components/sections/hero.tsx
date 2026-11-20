@@ -60,8 +60,8 @@ export default function Hero() {
             variants={fadeUp}
             className="max-w-xl text-balance text-base text-text-secondary sm:text-lg"
           >
-            UI/UX Designer & Frontend Developer creating intuitive digital products, scalable web
-            experiences, and meaningful user interactions.
+            UI/UX Designer & Frontend Developer turning research and Figma prototypes into
+            pixel-perfect, accessible React & Next.js interfaces — from first sketch to production.
           </motion.p>
 
           <motion.div
@@ -83,7 +83,7 @@ export default function Hero() {
             <MagneticButton
               as="a"
               href="resume.pdf"
-              download
+              download="Diya_Chauhan_Resume.pdf"
               className="glass inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold text-text-primary transition-colors hover:border-accent-secondary/50"
             >
               <Download className="h-4 w-4" />
@@ -162,6 +162,10 @@ export default function Hero() {
                     {profile.experienceYears}
                   </p>
                   <p className="text-xs text-text-secondary">Years Experience</p>
+                </div>
+                <div>
+                  <p className="font-nums font-heading text-2xl font-bold text-gradient-accent">~30%</p>
+                  <p className="text-xs text-text-secondary">UX Improvement</p>
                 </div>
               </div>
 

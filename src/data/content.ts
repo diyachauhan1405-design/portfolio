@@ -4,7 +4,7 @@ export const profile = {
   experienceYears: "1.5+",
   company: "WildMind AI",
   location: "Ahmedabad, GJ, India",
-  availability: "Available for Work",
+  availability: "Immediate Joiner · Open to Work",
   email: "diyachauhan1405@gmail.com",
   socials: {
     linkedin: "https://linkedin.com/in/diya-chauhan14",
@@ -14,7 +14,7 @@ export const profile = {
   },
 };
 
-export const heroStack = ["React", "Next.js", "Figma", "UX Research"];
+export const heroStack = ["React.js", "Next.js", "Figma", "Tailwind CSS", "UX Research", "Design Systems"];
 
 export const aboutCards = [
   {
@@ -118,7 +118,7 @@ export const projects = [
     category: "Marketing Website",
     tech: ["Figma", "React", "Next.js", "Tailwind CSS"],
     description:
-      "Designed and built the official website for an Ahmedabad-based drone light show company — owning UI/UX and frontend end-to-end, from Figma through production code. Includes service pages, city-specific landing pages, and a blog/portfolio section built for a conversion-focused, brand-forward client inquiry funnel.",
+      "Designed and developed the official website for a drone light show company — from Figma to production. Built service, city-specific, blog, and portfolio pages on a consistent design system, with a conversion-focused layout that showcases drone shows and improves the client inquiry experience across devices.",
     gradient: "from-[#6C63FF] to-[#00E5FF]",
     image: "/projects/flybit.svg",
     github: "#",
@@ -131,7 +131,7 @@ export const projects = [
     category: "AI Product",
     tech: ["Figma", "React.js", "Next.js", "Design Systems"],
     description:
-      "Design and develop intuitive, scalable experiences for a generative AI platform — translating complex AI workflows into seamless, user-centric products. Built reusable, accessible React/Next.js components that improved delivery speed across the team.",
+      "Designed and developed intuitive, scalable experiences for a generative AI platform — translating complex AI workflows into seamless, user-centric products. Improved overall UX by ~30% and built reusable React/Next.js components that cut frontend development time by ~30%.",
     gradient: "from-[#7C3AED] to-[#6C63FF]",
     image: "/projects/wildmind.svg",
     github: "#",
@@ -144,7 +144,7 @@ export const projects = [
     category: "Corporate Website",
     tech: ["Figma", "HTML5", "CSS3", "Bootstrap"],
     description:
-      "Designed and developed a corporate website for an IoT and energy management solutions company, showcasing their product portfolio — IoT gateways, smart energy meters — and communicating brand and services to clients across warehousing, railways, and hospitality.",
+      "Designed and developed a corporate website showcasing IoT and energy management solutions. Created responsive pages for products, services, and industry use cases — translating business requirements into clean, user-friendly interfaces that strengthen the company's digital presence.",
     gradient: "from-[#00E5FF] to-[#22C55E]",
     image: "/projects/incsmart.svg",
     github: "https://github.com/diyachauhan1405-design/incsmart-web",
@@ -158,13 +158,19 @@ export const experience = [
     role: "UI/UX Designer & Frontend Developer",
     period: "Aug 2025 — July 2026",
     responsibilities: [
-      "Design and develop intuitive, scalable user experiences for a generative AI platform",
-      "Work across the full UI/UX process — research, wireframing, high-fidelity prototyping, and responsive, performance-optimized frontend builds",
-      "Translate complex AI workflows into seamless, user-centric digital products",
+      "Designed and developed intuitive, scalable user experiences for a generative AI platform",
+      "Managed the end-to-end UI/UX process — user research, wireframing, high-fidelity prototyping, usability improvements, and responsive frontend development",
+      "Translated complex AI workflows into seamless, user-centric digital products",
     ],
     achievements: [
-      "Developed generic, reusable React.js and Next.js components with strong accessibility compliance",
-      "Improved project delivery speed through higher code reusability across the product",
+      "Improved overall user experience by ~30% across the generative AI platform",
+      "Reduced design-to-development iterations by ~25%",
+      "Built generic, reusable React.js & Next.js components — ~40% more reusability and ~30% faster frontend development",
+    ],
+    impact: [
+      { value: "~30%", label: "Better UX" },
+      { value: "~25%", label: "Fewer iterations" },
+      { value: "~40%", label: "Reusability" },
     ],
     tech: ["Figma", "React.js", "Next.js", "Design Systems"],
   },
@@ -173,13 +179,17 @@ export const experience = [
     role: "UI/UX Intern",
     period: "Jan 2025 — Jun 2025",
     responsibilities: [
-      "Led the redesign of the official Vnnovate Solutions website end-to-end",
-      "Created high-fidelity prototypes in Figma focused on modern aesthetics and usability",
-      "Developed responsive frontend layouts using HTML, CSS, and Bootstrap",
+      "Led the redesign of the official Vnnovate Solutions website with a user-centric UX approach",
+      "Created high-fidelity Figma prototypes with responsive, modern designs",
+      "Developed responsive frontend layouts using HTML, CSS, and Bootstrap — without custom CSS",
     ],
     achievements: [
-      "Drove a strategic UX transformation improving usability and visual consistency",
-      "Improved website structure and user flow to boost engagement and performance",
+      "Improved usability, visual consistency, and user engagement by ~25%",
+      "Improved website navigation and user flows by ~30%",
+    ],
+    impact: [
+      { value: "~25%", label: "Engagement" },
+      { value: "~30%", label: "Better navigation" },
     ],
     tech: ["Figma", "HTML", "CSS", "Bootstrap"],
   },
@@ -188,12 +198,14 @@ export const experience = [
     role: "Python Development Intern",
     period: "Dec 2023 — Jan 2024",
     responsibilities: [
-      "Developed a facial recognition system using OpenCV, Python, and Firebase",
-      "Integrated core libraries including CVZone to streamline computer vision workflows",
+      "Developed a facial recognition system using Python, OpenCV, and Firebase",
+      "Integrated CVZone, MediaPipe, and NumPy to improve computer vision workflows",
     ],
     achievements: [
-      "Successfully delivered the project, demonstrating strong technical fundamentals",
+      "Optimized image processing, improving application efficiency by ~20%",
+      "Delivered a functional and scalable computer vision solution",
     ],
+    impact: [{ value: "~20%", label: "Efficiency" }],
     tech: ["Python", "OpenCV", "CVZone", "Firebase", "NumPy", "MediaPipe"],
   },
 ];
@@ -238,7 +250,7 @@ export const achievementStats = [
 ];
 
 export const certifications = [
-  { name: "Python Computer Vision", issuer: "Vnnovate Solutions Private Limited", date: "31 Jan 2024" },
-  { name: "Circuit Assembly", issuer: "U.V. Patel College of Engineering", date: "14–15 Mar 2024" },
-  { name: "PRINT FUSION 2K24", issuer: "U.V. Patel College of Engineering", date: "14–15 Mar 2024" },
+  { name: "Python Computer Vision", issuer: "Vnnovate Solutions Pvt. Ltd.", date: "Jan 2024" },
+  { name: "Circuit Assembly", issuer: "U.V. Patel College of Engineering", date: "Mar 2024" },
+  { name: "PRINT FUSION 2K24", issuer: "U.V. Patel College of Engineering", date: "Mar 2024" },
 ];

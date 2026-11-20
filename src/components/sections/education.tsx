@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, MapPin } from "lucide-react";
+import { Award, GraduationCap, MapPin } from "lucide-react";
 import SectionHeading from "@/components/ui/section-heading";
-import { education } from "@/data/content";
+import { certifications, education } from "@/data/content";
 import { cn } from "@/lib/utils";
 
 export default function Education() {
@@ -17,7 +17,7 @@ export default function Education() {
               Strong foundations, <span className="text-gradient">still building</span>
             </>
           }
-          description="A computer engineering degree, now followed by a postgraduate program in AI software engineering."
+          description="A computer engineering degree, now followed by a postgraduate program in AI software engineering — plus certifications along the way."
         />
 
         <div className="mt-16 grid gap-6 md:grid-cols-2">
@@ -66,6 +66,30 @@ export default function Education() {
             );
           })}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="mt-14"
+        >
+          <p className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-text-secondary">
+            <Award className="h-3.5 w-3.5 text-accent-secondary" /> Certifications
+          </p>
+          <ul className="grid gap-4 sm:grid-cols-3">
+            {certifications.map((cert) => (
+              <li
+                key={cert.name}
+                className="glass flex flex-col gap-1.5 rounded-2xl p-5 transition-colors hover:border-accent-secondary/40"
+              >
+                <span className="font-heading text-sm font-semibold">{cert.name}</span>
+                <span className="text-xs text-text-secondary">{cert.issuer}</span>
+                <span className="font-nums mt-auto pt-2 text-xs text-accent-secondary">{cert.date}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
       </div>
     </section>
   );

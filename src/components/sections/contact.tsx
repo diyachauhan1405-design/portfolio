@@ -160,7 +160,7 @@ export default function Contact() {
           <MagneticButton
             as="a"
             href="resume.pdf"
-            download
+            download="Diya_Chauhan_Resume.pdf"
             className="glass inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm text-text-secondary transition-colors hover:text-text-primary"
           >
             <Download className="h-4 w-4" />
