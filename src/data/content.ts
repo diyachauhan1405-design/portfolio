@@ -21,6 +21,12 @@ export const education = [
     location: "Kharagpur",
     period: "Oct 2026 — Jul 2027",
     status: "In progress",
+    // TODO(Diya): add real modules / capstone once the programme starts.
+    points: [
+      "Deepening the engineering side of the AI products I design and build",
+      "Builds directly on my generative AI platform work at WildMind AI",
+      "Open to full-time roles during the programme — immediate joiner",
+    ],
   },
   {
     institution: "U.V. Patel College of Engineering, Ganpat University",
@@ -28,6 +34,12 @@ export const education = [
     location: "Kherva",
     period: "Aug 2021 — May 2025",
     status: "Completed",
+    // TODO(Diya): add CGPA, final-year project or key subjects if you'd like.
+    points: [
+      "Python computer-vision internship at Vnnovate Solutions in 3rd year (Dec 2023 – Jan 2024)",
+      "UI/UX internship at Vnnovate Solutions alongside final year (Jan – Jun 2025)",
+      "Certified in Circuit Assembly and PRINT FUSION 2K24 at U.V. Patel College (Mar 2024)",
+    ],
   },
 ];
 
@@ -247,3 +259,97 @@ export const caseStudy = {
   reflection:
     "If I did it again, I would set up usability metrics from day one, so improvements could be measured continuously instead of estimated at milestones.",
 };
+
+// Figma files shown on /designs.
+// TODO(Diya): paste each file's share link into `figmaUrl` (Share → "Anyone with the link can view" → Copy link).
+// Optional `prototypeUrl`: a Figma prototype link (Present → Share prototype) to power the ▶ Present button.
+export type DesignFile = {
+  id: string;
+  name: string;
+  page: string;
+  project: string;
+  role: string;
+  year?: string;
+  type: string;
+  tools: string[];
+  summary: string;
+  highlights: string[];
+  figmaUrl: string;
+  prototypeUrl?: string;
+  liveUrl?: string;
+  swatch: string;
+};
+
+// TODO(Diya): give each file its real project name, year and a line about your role.
+export const designFiles: DesignFile[] = [
+  {
+    id: "dashboard",
+    name: "Admin dashboard",
+    page: "Web & dashboards",
+    project: "Admin dashboard",
+    role: "UI/UX Designer",
+    type: "Web app · Dashboard",
+    tools: ["Figma", "Data tables", "Charts"],
+    summary:
+      "A desktop admin dashboard with a dark sidebar navigation, data-dense tables, filters and analytics cards.",
+    highlights: ["Multiple dashboard screens", "Table, filter and chart patterns", "Consistent navigation shell"],
+    figmaUrl: "https://www.figma.com/design/Ij9uE4nCNtqgALvSQfRMrP/Untitled?node-id=17-3",
+    swatch: "#bba6ff",
+  },
+  {
+    id: "mobile-orange",
+    name: "Mobile app — full flow",
+    page: "Mobile apps",
+    project: "Mobile app (orange)",
+    role: "UI/UX Designer",
+    type: "Mobile app",
+    tools: ["Figma", "User flows", "Mobile UI"],
+    summary:
+      "An end-to-end mobile app: a large set of screens laid out flow by flow, with an orange accent system across light and dark screens.",
+    highlights: ["Complete multi-screen flows", "Light and dark screens", "Reusable mobile components"],
+    figmaUrl: "https://www.figma.com/design/kRLjs4MHwXXicePTAiUiui/Untitled?node-id=0-1",
+    swatch: "#ffae5c",
+  },
+  {
+    id: "mobile-green",
+    name: "Mobile app — green UI",
+    page: "Mobile apps",
+    project: "Mobile app (green)",
+    role: "UI/UX Designer",
+    type: "Mobile app",
+    tools: ["Figma", "Mobile UI"],
+    summary:
+      "A green-themed mobile app, with screens grouped on separate boards for different parts of the journey.",
+    highlights: ["Screens grouped by journey", "Consistent green action system"],
+    figmaUrl: "https://www.figma.com/design/PjyQoMO50dc2D81oOnn1Ul/Untitled?node-id=0-1",
+    swatch: "#8ee6b5",
+  },
+  {
+    id: "sneaker",
+    name: "Sneaker store — product page",
+    page: "Web & dashboards",
+    project: "Sneaker store concept",
+    role: "UI Designer",
+    type: "E-commerce concept",
+    tools: ["Figma", "Visual design"],
+    summary:
+      "A bold e-commerce product page concept for a sneaker drop: hero product shot, size picker, add-to-cart and related products.",
+    highlights: ["Strong visual hierarchy", "Size picker & cart actions", "Related-product rail"],
+    figmaUrl: "https://www.figma.com/design/WYQ6wSABeLCGpd7uuvESJl/Untitled",
+    swatch: "#8fd3ff",
+  },
+  {
+    id: "wireframes",
+    name: "Wireframes — low fidelity",
+    page: "Wireframes",
+    project: "Wireframes",
+    role: "UX Designer",
+    type: "Wireframes",
+    tools: ["Figma", "Wireframing", "Information architecture"],
+    summary:
+      "Low-fidelity wireframes that map out structure and flow before any visual design — where layout and content decisions get made.",
+    highlights: ["Structure before styling", "Page-by-page flow"],
+    figmaUrl: "https://www.figma.com/design/tYPve3LZiZVISonUQzBBrb/Untitled",
+    swatch: "#ffd54a",
+  },
+];

@@ -47,6 +47,18 @@ export default function Education() {
                   <h3 className="font-display text-2xl font-semibold leading-tight">{item.institution}</h3>
                   <p className="mt-1 font-medium text-accent-primary">{item.degree}</p>
                 </div>
+                <ul className="flex flex-col gap-2.5">
+                  {item.points.map((pt, k) => (
+                    <li key={pt} className="flex gap-3 text-[15px] leading-relaxed text-text-secondary">
+                      <span
+                        className={`mt-2 h-2 w-2 shrink-0 rounded-full ${
+                          ["bg-accent-primary", "bg-accent-secondary", "bg-success", "bg-purple-glow"][k % 4]
+                        }`}
+                      />
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
                 <div className="mt-auto flex flex-wrap items-center justify-between gap-2 border-t border-dashed border-border pt-4 text-sm text-text-secondary">
                   <span className="font-nums">{item.period}</span>
                   <span className="inline-flex items-center gap-1.5">

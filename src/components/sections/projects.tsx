@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Code2 } from "lucide-react";
 import SectionHeading from "@/components/ui/section-heading";
 import { projects } from "@/data/content";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const noteBg: Record<string, string> = {
@@ -32,6 +33,14 @@ export default function Projects() {
           }
           description="Real products, live on the web — from first wireframe to production code."
         />
+        <Link
+          href="/designs"
+          className="paper mt-8 inline-flex -rotate-1 items-center gap-3 border-2 border-ink bg-card px-5 py-3 font-semibold transition-transform hover:rotate-0"
+        >
+          <span className="flex h-7 w-7 items-center justify-center rounded-md bg-[#0d99ff] text-xs font-bold text-white">#</span>
+          Open my Figma files — browse them like you&apos;re in the editor
+          <ArrowUpRight className="h-4 w-4" />
+        </Link>
 
         <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {projects.map((p, i) => {
