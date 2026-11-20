@@ -21,6 +21,12 @@ export const education = [
     location: "Kharagpur",
     period: "Oct 2026 — Jul 2027",
     status: "In progress",
+    // TODO(Diya): add real modules / capstone once the programme starts.
+    points: [
+      "Deepening the engineering side of the AI products I design and build",
+      "Builds directly on my generative AI platform work at WildMind AI",
+      "Open to full-time roles during the programme — immediate joiner",
+    ],
   },
   {
     institution: "U.V. Patel College of Engineering, Ganpat University",
@@ -28,6 +34,12 @@ export const education = [
     location: "Kherva",
     period: "Aug 2021 — May 2025",
     status: "Completed",
+    // TODO(Diya): add CGPA, final-year project or key subjects if you'd like.
+    points: [
+      "Python computer-vision internship at Vnnovate Solutions in 3rd year (Dec 2023 – Jan 2024)",
+      "UI/UX internship at Vnnovate Solutions alongside final year (Jan – Jun 2025)",
+      "Certified in Circuit Assembly and PRINT FUSION 2K24 at U.V. Patel College (Mar 2024)",
+    ],
   },
 ];
 
