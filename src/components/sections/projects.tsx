@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Code2 } from "lucide-react";
 import SectionHeading from "@/components/ui/section-heading";
+import ProjectThumb from "@/components/ui/project-thumb";
 import { projects } from "@/data/content";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -18,7 +19,6 @@ const noteBg: Record<string, string> = {
 const tilts = [-2.5, 1.5, -1.5, 2];
 
 export default function Projects() {
-  const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   return (
     <section id="work" data-frame="Featured Work" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -55,26 +55,30 @@ export default function Projects() {
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ type: "spring", stiffness: 150, damping: 16, delay: i * 0.06 }}
                 data-spec="Project card · tape · paper shadow · hover straightens"
-                className={cn("paper tape flex flex-col p-3 pb-5", noteBg[p.note] ?? "bg-note-yellow")}
+                className={cn("group paper tape flex flex-col p-3 pb-5", noteBg[p.note] ?? "bg-note-yellow")}
               >
-                <a
+                <ProjectThumb
+                  name={p.name}
                   href={hasLive ? p.liveUrl : "#case-study"}
-                  target={hasLive ? "_blank" : undefined}
-                  rel="noopener noreferrer"
-                  aria-label={`Open ${p.name}`}
-                  className="block overflow-hidden rounded-[3px] bg-card"
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={`${base}${p.image}`}
-                    alt=""
-                    className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </a>
+                  external={Boolean(hasLive)}
+                  screenshot={p.screenshot}
+                  host={p.host}
+                  tagline={p.tagline}
+                  cover={p.cover}
+                />
                 <div className="flex flex-1 flex-col px-2 pt-4">
-                  <p className="text-xs font-medium text-black/60">
-                    {p.timeline} · {p.category}
-                  </p>
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="text-xs font-medium text-black/60">
+                      {p.timeline} · {p.category}
+                    </p>
+                    {hasLive ? (
+                      <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-white/70 px-2 py-0.5 text-[10px] font-semibold">
+                        <span className="h-1.5 w-1.5 animate-pulse-glow rounded-full bg-success" /> Live
+                      </span>
+                    ) : (
+                      <span className="shrink-0 rounded-full bg-white/70 px-2 py-0.5 text-[10px] font-semibold">Case study</span>
+                    )}
+                  </div>
                   <h3 className="mt-1 font-display text-2xl font-semibold leading-tight">{p.name}</h3>
                   <p className="mt-1 text-sm text-black/75">{p.tagline}</p>
                   <ul className="mt-3 flex flex-wrap gap-1.5">

@@ -274,3 +274,27 @@ html[data-mode="design"] [data-spec]:focus-visible::after {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ───────── Project thumbnails: full-page scroll on hover ───────── */
+.thumb-viewport {
+  container-type: size;
+}
+.thumb-scroll {
+  transform: translateY(0);
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+article:hover .thumb-scroll,
+article:focus-within .thumb-scroll {
+  /* move the image up until its bottom edge meets the viewport's bottom */
+  transform: translateY(calc(-100% + 100cqh));
+  transition-duration: 7s;
+  transition-timing-function: linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .thumb-scroll,
+  article:hover .thumb-scroll,
+  article:focus-within .thumb-scroll {
+    transition: none;
+    transform: none;
+  }
+}

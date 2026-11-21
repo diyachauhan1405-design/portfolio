@@ -94,8 +94,8 @@ export const projects = [
     tech: ["Figma", "React", "Next.js", "Tailwind CSS"],
     description:
       "Designed and developed the official website for a drone light show company — from Figma to production. Built service, city-specific, blog, and portfolio pages on a consistent design system, with a conversion-focused layout that showcases drone shows and improves the client inquiry experience across devices.",
-    gradient: "from-[#6C63FF] to-[#00E5FF]",
-    image: "/projects/flybit.svg",
+    screenshot: "/projects/flybit-site.jpg",
+    host: "flybitdynamics.com",
     github: "#",
     liveUrl: "https://flybitdynamics.com/",
   },
@@ -109,8 +109,8 @@ export const projects = [
     tech: ["Figma", "React.js", "Next.js", "Design Systems"],
     description:
       "Designed and developed intuitive, scalable experiences for a generative AI platform — translating complex AI workflows into seamless, user-centric products. Improved overall UX by ~30% and built reusable React/Next.js components that cut frontend development time by ~30%.",
-    gradient: "from-[#7C3AED] to-[#6C63FF]",
-    image: "/projects/wildmind.svg",
+    // No public site yet: shows a bold cover. Add a shareable screenshot as `screenshot` to switch it to the browser view.
+    cover: { metric: "~30%", metricLabel: "better UX", color: "#ff9ec7" },
     github: "#",
     liveUrl: "#",
   },
@@ -124,8 +124,8 @@ export const projects = [
     tech: ["Figma", "HTML5", "CSS3", "Bootstrap"],
     description:
       "Designed and developed a corporate website showcasing IoT and energy management solutions. Created responsive pages for products, services, and industry use cases — translating business requirements into clean, user-friendly interfaces that strengthen the company's digital presence.",
-    gradient: "from-[#00E5FF] to-[#22C55E]",
-    image: "/projects/incsmart.svg",
+    screenshot: "/projects/incsmart-site.jpg",
+    host: "incsmart-web.vercel.app",
     github: "https://github.com/diyachauhan1405-design/incsmart-web",
     liveUrl: "https://incsmart-web.vercel.app/",
   },
