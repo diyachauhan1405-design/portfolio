@@ -27,10 +27,10 @@ export const metadata: Metadata = {
   // which Next does not add to metadata URLs on its own.
   icons: {
     icon: [
-      { url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icon.svg?v=note`, type: "image/svg+xml" },
-      { url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/favicon.ico?v=note`, sizes: "48x48" },
+      { url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icon.svg?v=d`, type: "image/svg+xml" },
+      { url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/favicon.ico?v=d`, sizes: "48x48" },
     ],
-    apple: { url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/apple-icon.png?v=note`, sizes: "180x180" },
+    apple: { url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/apple-icon.png?v=d`, sizes: "180x180" },
   },
   title: "Diya Chauhan — UI/UX Designer & Frontend Developer",
   description:
