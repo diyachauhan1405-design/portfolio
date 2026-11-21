@@ -23,6 +23,15 @@ const inter = localFont({
 });
 
 export const metadata: Metadata = {
+  // Favicon set lives in /public. Paths are prefixed with the GitHub Pages base path,
+  // which Next does not add to metadata URLs on its own.
+  icons: {
+    icon: [
+      { url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icon.svg`, type: "image/svg+xml" },
+      { url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/favicon.ico`, sizes: "48x48" },
+    ],
+    apple: { url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/apple-icon.png`, sizes: "180x180" },
+  },
   title: "Diya Chauhan — UI/UX Designer & Frontend Developer",
   description:
     "Diya Chauhan designs interfaces and builds them in code — UI/UX Designer & Frontend Developer focused on AI products. Immediate joiner, Ahmedabad.",
@@ -34,9 +43,6 @@ export const metadata: Metadata = {
     "React Developer",
     "Portfolio",
   ],
-  icons: {
-    icon: "/icon.svg",
-  },
   openGraph: {
     title: "Diya Chauhan — UI/UX Designer & Frontend Developer",
     description:
